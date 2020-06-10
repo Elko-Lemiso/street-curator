@@ -7,7 +7,7 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-const localhost = process.env.PORT;
+const localhost    = process.env.PORT;
 const connectionpassword = process.env.CONNECTIONPASSWORD;
 
 // To fix the DeprecationWarning
