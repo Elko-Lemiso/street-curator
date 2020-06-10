@@ -57,6 +57,8 @@ const signup = require('./routes/signup');
 app.use('/', signup);
 const about = require('./routes/about');
 app.use('/', about);
+const login = require('./routes/login');
+app.use('/', login);
 
 module.exports = app;
 
