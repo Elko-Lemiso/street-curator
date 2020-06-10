@@ -9,8 +9,15 @@ const logger       = require('morgan');
 const path         = require('path');
 const localhost = process.env.PORT;
 const connectionpassword = process.env.CONNECTIONPASSWORD;
+
+// To fix the DeprecationWarning
+mongoose.set('useUnifiedTopology', true);
+mongoose.set('useCreateIndex', true);
+
+//.connect('mongodb://localhost/street-curator', {useNewUrlParser: true})
+
 mongoose
-  .connect(`${connectionpassword}`, {useNewUrlParser: true,  useUnifiedTopology: true })
+  .connect(`${connectionpassword}`, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
