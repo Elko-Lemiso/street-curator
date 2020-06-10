@@ -1,0 +1,30 @@
+<h1>SIGNUP</h1>
+
+<form id="sign-up-form" action="/signup" method="post">
+    <label for="username">Username</label>
+    <input id="username" type="text" name="username" placeholder="f.e. johnwest ..">
+
+    <label for="first-name">First name</label>
+    <input id="first-name" type="text" name="firstName" placeholder="f.e. John ..">
+
+    <label for="last-name">Last name</label>
+    <input id="last-name" type="text" name="lastName" placeholder="f.e. West ..">
+
+    <label for="email-address">E-mail address</label>
+    <input id="email-address" type="text" name="email" placeholder="f.e. john-west@gmail.com ..">
+
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" placeholder="********">
+
+    <label for="user-type">User type:</label>
+    <input type="radio" id="tourist" name="userType" value="tourist">
+    <label for="tourist">Tourist</label>
+    <input type="radio" id="artist" name="userType" value="artist">
+    <label for="artist">Artist</label>
+
+    {{#if errorMessage}}
+        <div class="error-message">{{ errorMessage }}</div>
+    {{/if}}
+
+    <button type="submit">Lets go!</button>
+</form>
