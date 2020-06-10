@@ -35,8 +35,8 @@ const userSchema = new Schema({
   visits : {type: Number},
   level : {type: Number},
   userType : {type: String, enum :['tourist','artist'], required : true},
-  artistArtworks: [{type: ObjectId , ref: Artwork }],
-  visitedArtworks: [{type: ObjectId , ref: Artwork }]
+  artistArtworks: [{type: Schema.ObjectId , ref: 'Artwork' }],
+  visitedArtworks: [{type: Schema.ObjectId , ref: 'Artwork' }]
 },{ 
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
@@ -44,3 +44,4 @@ const userSchema = new Schema({
 const User = mongoose.model('User', userSchema, 'users');
 
 module.exports = User;
+
