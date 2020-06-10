@@ -8,9 +8,9 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 const localhost = process.env.PORT;
-const pass = process.env.PASSWORD;
+const connectionpassword = process.env.CONNECTIONPASSWORD;
 mongoose
-  .connect(`mongodb+srv://elko:${pass}@street-curator-s9tez.mongodb.net/street-curator`, {useNewUrlParser: true,  useUnifiedTopology: true })
+  .connect(`${connectionpassword}`, {useNewUrlParser: true,  useUnifiedTopology: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
