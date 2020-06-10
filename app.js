@@ -55,6 +55,8 @@ const index = require('./routes/index');
 app.use('/', index);
 const signup = require('./routes/signup');
 app.use('/', signup);
+const about = require('./routes/about');
+app.use('/', about);
 
 module.exports = app;
 
