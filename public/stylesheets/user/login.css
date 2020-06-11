@@ -1,37 +1,10 @@
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
-form input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
+.login form input {
+  min-width: 280px
 }
-
-form button {
-    width: 100%;
-    background-color: #392F5A;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-
-  form .form-radio {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-  }
-
-  form .form-radio input,  form .form-radio label{
-    width: 100px;
-    margin: 8px 0;
-  }

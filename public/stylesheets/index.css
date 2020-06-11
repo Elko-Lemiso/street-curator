@@ -1,0 +1,35 @@
+.landing-page{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-page #info{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 500 ;
+    color:#392F5A ;
+}
+.landing-page #info h1{
+    padding: 5%;
+}
+
+.landing-page .box{
+    text-align: center;
+    padding: 5%;
+    margin: 5%;
+    font-weight: 500 ;
+    color:#392F5A ;
+}
+.landing-page .box h1{
+    font-size: 2rem;
+}
+
+.landing-page .box ul{
+    list-style: none;
+    text-align: center;
+}
+

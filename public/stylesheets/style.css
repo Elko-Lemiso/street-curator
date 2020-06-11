@@ -1,8 +1,79 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+    font: 14px "Roboto", "Lucida Grande", Helvetica, Arial, sans-serif; 
+}
 
 a {
-  color: #00B7FF; }
+    color: #00B7FF; 
+}
 
-/*# sourceMappingURL=style.css.map */
+.background-green{
+    background-color: #A8C7BB;
+}
+
+.background-pink{
+    background-color: #FC9797;
+}
+
+.background-purple {
+    background-color:#392F5A ;
+}
+
+.font-green{
+    color: #A8C7BB;
+}
+
+.font-pink{
+    color: #FC9797;
+}
+
+.font-purple{
+    color:#392F5A;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form input {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+form button {
+    width: 100%;
+    max-width: 500px;
+    background-color: #392F5A;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form .form-radio {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+form .form-radio input,  form .form-radio label{
+    width: 75px;
+    margin: 8px 0;
+}
+
+form label .italic-text{
+    font-style: italic;
+    color: grey;
+}
