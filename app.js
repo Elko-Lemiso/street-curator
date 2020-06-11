@@ -9,6 +9,7 @@ const logger       = require('morgan');
 const path         = require('path');
 const localhost    = process.env.PORT;
 const connectionpassword = process.env.CONNECTIONPASSWORD;
+const SECRET = process.env.SECRET;
 const session    = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
@@ -54,7 +55,7 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.locals.title = 'Express - Generated with IronGenerator';
 
 app.use(session({
-  secret: "secretsssssssss",
+  secret: `${SECRET}`,
   cookie: { maxAge: 60000 },
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
@@ -83,6 +84,8 @@ app.use('/', require('./routes/index'));
 app.use('/', require('./routes/user/signup'));
 app.use('/', require('./routes/about'));
 app.use('/', require('./routes/user/login'));
+app.use('/', require('./routes/explore'));
+app.use('/', require('./routes/map'))
 
 module.exports = app;
 
