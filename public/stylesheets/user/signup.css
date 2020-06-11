@@ -4,13 +4,13 @@
     flex-direction: column;
 }
 
-form {
+.sign-up form {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-form input {
+.sign-up form input {
     width: 100%;
     max-width: 500px;
     padding: 12px 20px;
@@ -21,7 +21,7 @@ form input {
     box-sizing: border-box;
 }
 
-form button {
+.sign-up form button {
     width: 100%;
     max-width: 500px;
     background-color: #392F5A;
@@ -33,22 +33,22 @@ form button {
     cursor: pointer;
 }
 
-form label {
+.sign-up form label {
     margin-top: 10px;
 }
 
-form .form-radio {
+.sign-up form .form-radio {
     display: flex;
     flex-direction: row;
     justify-content: start;
 }
 
-form .form-radio input,  form .form-radio label{
+.sign-up form .form-radio input,  .sign-up form .form-radio label{
     width: 75px;
     margin: 8px 0;
 }
 
-form label .italic-text{
+.sign-up form label .italic-text{
     font-style: italic;
     color: grey;
 }

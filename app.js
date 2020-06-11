@@ -9,6 +9,7 @@ const logger       = require('morgan');
 const path         = require('path');
 const localhost    = process.env.PORT;
 const connectionpassword = process.env.CONNECTIONPASSWORD;
+const cloudinary = require('cloudinary').v2;
 
 // To fix the DeprecationWarning
 mongoose.set('useUnifiedTopology', true);
