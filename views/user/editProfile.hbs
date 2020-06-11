@@ -1,25 +1,25 @@
-<link rel="stylesheet" href="/stylesheets/user/signup.css" />
+<link rel="stylesheet" href="/stylesheets/user/editProfile.css" />
 
-<div class="sign-up">
+<div class="edit-profile">
     <h1>EDIT PROFILE</h1>
     <form action="/signup" method="post" enctype="multipart/form-data">
         <label for="username">Username <span class="italic-text">*required</span></label>
-        <input id="username" type="text" name="username" value="{{}}">
+        <input id="username" type="text" name="username" value="{{user.username}}">
 
         <label for="first-name">First name <span class="italic-text">*required</span></label>
-        <input id="first-name" type="text" name="firstName" value="{{}}">
+        <input id="first-name" type="text" name="firstName" value="{{user.firstName}}">
 
         <label for="last-name">Last name <span class="italic-text">*required</span></label>
-        <input id="last-name" type="text" name="lastName" value="{{}}">
+        <input id="last-name" type="text" name="lastName" value="{{user.lastName}}">
 
         <label for="email-address">E-mail address <span class="italic-text">*required</span></label>
-        <input id="email-address" type="text" name="email" value="{{}}">
+        <input id="email-address" type="text" name="email" value="{{user.email}}">
 
         <label for="password">Password <span class="italic-text">*required</span></label>
-        <input id="password" type="password" name="password" value="{{}}">
+        <input id="password" type="password" name="password" value="******">
 
         <label for="user-type">User type <span class="italic-text">*required</span></label>
-        {{#if user.userType.tourist}}
+        {{#if isTourist}}
             <div class="form-radio">
                 <input type="radio" id="tourist" name="userType" value="tourist" checked="checked">
                 <label for="tourist">Tourist</label>
@@ -28,7 +28,7 @@
                 <input type="radio" id="artist" name="userType" value="artist">
                 <label for="artist">Artist</label>
             </div>
-            {{else}}
+        {{else}}
             <div class="form-radio">
                 <input type="radio" id="tourist" name="userType" value="tourist">
                 <label for="tourist">Tourist</label>
@@ -40,8 +40,11 @@
         {{/if}}
 
         <label for="input-profile-picture">Profile picture</label>
+        {{#if user.profilePicture}}
+            <div class="profile-picture"><img src="images/avatar-icon-vector.jpg" alt=""></div>
+        {{/if}}
         <input type="file" id="input-profile-picture" name="profilePicture">
 
-        <button type="submit">Edit profile!</button>
+        <button type="submit">Update profile!</button>
     </form>
 </div>

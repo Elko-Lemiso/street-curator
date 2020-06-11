@@ -34,7 +34,7 @@ const userSchema = new Schema({
     profilePicture : pictureSchema,
     visits : {type: Number},
     level : {type: Number},
-    userType : {type: String, enum :['tourist','artist'], required : true},
+    userType : {type: String, enum :['tourist','artist'], default: 'tourist'},
     artistArtworks: [{type: Schema.ObjectId , ref: 'Artwork' }],
     visitedArtworks: [{type: Schema.ObjectId , ref: 'Artwork' }]
 },{ 
