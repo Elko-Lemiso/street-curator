@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const User = require('../models/User');
+const User = require('../../models/User');
 const bcrypt = require('bcrypt');
 
 router.post("/user/login", (req, res, next)=>{
@@ -8,7 +8,7 @@ router.post("/user/login", (req, res, next)=>{
   const password = req.body.password;
 
   if (email === "" || password === "") {
-      res.render("login", {
+      res.render("user/login", {
         errorMessage: "Please enter both, email and password to sign up."
       });
       return;
@@ -36,7 +36,7 @@ router.post("/user/login", (req, res, next)=>{
 })
 
 router.get('/login', (req, res, next) => {
-  res.render('login');
+  res.render('user/login');
 });
 
 module.exports = router;

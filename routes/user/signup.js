@@ -1,10 +1,10 @@
 const express = require('express');
 const router  = express.Router();
-const User = require('../models/User')
-const uploadCloud = require('../config/cloudinary');
+const User = require('../../models/User')
+const uploadCloud = require('../../config/cloudinary');
 
 router.get('/signup', (req, res, next) => {
-  res.render('signup');
+  res.render('user/signup');
 });
 
 router.post('/signup', uploadCloud.single('profilePicture'), (req, res, next) =>{
