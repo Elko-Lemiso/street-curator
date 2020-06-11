@@ -1,34 +1,40 @@
 <link rel="stylesheet" href="/stylesheets/signup.css" />
-<h1>SIGNUP</h1>
-<form class="sign-up" action="/signup" method="post">
-    <label for="username">Username</label>
-    <input id="username" type="text" name="username" placeholder="f.e. johnwest">
 
-    <label for="first-name">First name</label>
-    <input id="first-name" type="text" name="firstName" placeholder="f.e. John">
+<div class="sign-up">
+    <h1>SIGNUP</h1>
+    <form action="/signup" method="post" enctype="multipart/form-data">
+        <label for="username">Username <span class="italic-text">*required</span></label>
+        <input id="username" type="text" name="username" placeholder="f.e. johnwest">
 
-    <label for="last-name">Last name</label>
-    <input id="last-name" type="text" name="lastName" placeholder="f.e. West">
+        <label for="first-name">First name <span class="italic-text">*required</span></label>
+        <input id="first-name" type="text" name="firstName" placeholder="f.e. John">
 
-    <label for="email-address">E-mail address</label>
-    <input id="email-address" type="text" name="email" placeholder="f.e. john-west@gmail.com">
+        <label for="last-name">Last name <span class="italic-text">*required</span></label>
+        <input id="last-name" type="text" name="lastName" placeholder="f.e. West">
 
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password" placeholder="********">
+        <label for="email-address">E-mail address <span class="italic-text">*required</span></label>
+        <input id="email-address" type="text" name="email" placeholder="f.e. john-west@gmail.com">
 
-    <label for="user-type">User type</label>
-    <div class="form-radio">
-        <input type="radio" id="tourist" name="userType" value="tourist" checked="checked">
-        <label for="tourist">Tourist</label>
-    </div>
-    <div class="form-radio">
-        <input type="radio" id="artist" name="userType" value="artist">
-        <label for="artist">Artist</label>
-    </div>
+        <label for="password">Password <span class="italic-text">*required</span></label>
+        <input id="password" type="password" name="password" placeholder="********">
 
-    {{#if errorMessage}}
-        <div class="error-message">{{ errorMessage }}</div>
-    {{/if}}
+        <label for="user-type">User type <span class="italic-text">*required</span></label>
+        <div class="form-radio">
+            <input type="radio" id="tourist" name="userType" value="tourist" checked="checked">
+            <label for="tourist">Tourist</label>
+        </div>
+        <div class="form-radio">
+            <input type="radio" id="artist" name="userType" value="artist">
+            <label for="artist">Artist</label>
+        </div>
+        
+        <label for="input-profile-picture">Profile picture</label>
+        <input type="file" id="input-profile-picture" name="profilePicture">
 
-    <button type="submit">Lets go!</button>
-</form>
+        {{#if errorMessage}}
+            <div class="error-message">{{ errorMessage }}</div>
+        {{/if}}
+
+        <button type="submit">Lets go!</button>
+    </form>
+</div>

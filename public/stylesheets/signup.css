@@ -1,3 +1,9 @@
+.sign-up{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -6,6 +12,7 @@ form {
 
 form input {
     width: 100%;
+    max-width: 500px;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -16,6 +23,7 @@ form input {
 
 form button {
     width: 100%;
+    max-width: 500px;
     background-color: #392F5A;
     color: white;
     padding: 14px 20px;
@@ -23,15 +31,24 @@ form button {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-  }
+}
 
-  form .form-radio {
+form label {
+    margin-top: 10px;
+}
+
+form .form-radio {
     display: flex;
     flex-direction: row;
     justify-content: start;
-  }
+}
 
-  form .form-radio input,  form .form-radio label{
-    width: 100px;
+form .form-radio input,  form .form-radio label{
+    width: 75px;
     margin: 8px 0;
-  }
+}
+
+form label .italic-text{
+    font-style: italic;
+    color: grey;
+}

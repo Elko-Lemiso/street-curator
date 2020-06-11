@@ -1,12 +1,13 @@
 const express = require('express');
 const router  = express.Router();
 const User = require('../models/User')
+const uploadCloud = require('../config/cloudinary');
 
 router.get('/signup', (req, res, next) => {
   res.render('signup');
 });
 
-router.post('/signup', (req, res, next) =>{
+router.post('/signup', uploadCloud.single('profilePicture'), (req, res, next) =>{
     const bcrypt = require('bcrypt');
     const saltRounds = 10;
     const myPlaintextPassword = req.body.password;
@@ -19,19 +20,20 @@ router.post('/signup', (req, res, next) =>{
             lastName: `${req.body.lastName}`,
             email: `${req.body.email}`,
             password: `${hash}`,
-            userType: `${req.body.userType}`
+            userType: `${req.body.userType}`,
+            profilePicture: {
+                name: req.body.username,
+                path: req.file.url,
+                originalName: req.file.originalName
+              }
         })
         .then((user)=>{
             res.redirect('/');
             console.log(user);
         })
         .catch(error =>{
-            console.log(error);
+            console.log('This is the invalid field ->', error.field)
         })
 })
 
 module.exports = router;
-
-// bcrypt.compare(myPlaintextPassword, hash).then(function(result) {
-//     // result == true
-// });
