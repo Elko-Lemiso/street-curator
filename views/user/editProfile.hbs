@@ -19,7 +19,7 @@
         <input id="password" type="password" name="password" value="******">
 
         <label for="user-type">User type <span class="italic-text">*required</span></label>
-        {{#if user}}
+        {{#if isTourist}}
             <div class="form-radio">
                 <input type="radio" id="tourist" name="userType" value="tourist" checked="checked">
                 <label for="tourist">Tourist</label>

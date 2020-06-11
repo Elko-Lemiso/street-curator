@@ -54,6 +54,8 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.locals.title = 'Express - Generated with IronGenerator';
 
 app.use(session({
+  resave: true,
+  saveUninitialized: true,
   secret: "secretsssssssss",
   cookie: { maxAge: 60000 },
   store: new MongoStore({
