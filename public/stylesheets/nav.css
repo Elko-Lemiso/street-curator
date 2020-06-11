@@ -77,7 +77,7 @@ a.active span {
     bottom: 0%;
     left: 0px;
     z-index: 1;
-    position: relative;
+    position: fixed;
   }
   /* change the margin separating the anchor link elements now dividing the elements vertically */
   nav a {
