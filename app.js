@@ -9,7 +9,8 @@ const logger       = require('morgan');
 const path         = require('path');
 const localhost    = process.env.PORT;
 const connectionpassword = process.env.CONNECTIONPASSWORD;
-
+const session    = require("express-session");
+const MongoStore = require("connect-mongo")(session);
 
 // To fix the DeprecationWarning
 mongoose.set('useUnifiedTopology', true);
@@ -52,14 +53,36 @@ hbs.registerPartials(__dirname + '/views/partials');
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
-const index = require('./routes/index');
-app.use('/', index);
-const signup = require('./routes/user/signup');
-app.use('/', signup);
-const about = require('./routes/about');
-app.use('/', about);
-const login = require('./routes/user/login');
-app.use('/', login);
+app.use(session({
+  secret: "secretsssssssss",
+  cookie: { maxAge: 60000 },
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
+  })
+}));
+
+function addSession(req, res, next){
+  if (req.session.currentUser) { 
+    res.locals.loggedIn = true;
+    res.locals.user = req.session.currentUser
+  }          
+  next();   
+} 
+
+function protection(req, res, next){
+  if(req.session.currentUser){
+    next()
+  }
+  else{
+    res.redirect('/login')
+  }
+}
+app.use(addSession)
+app.use('/', require('./routes/index'));
+app.use('/', require('./routes/user/signup'));
+app.use('/', require('./routes/about'));
+app.use('/', require('./routes/user/login'));
 
 module.exports = app;
 

@@ -78,6 +78,8 @@ a.active span {
     left: 0px;
     z-index: 1;
     position: fixed;
+    border-top-right-radius: 20%;
+    border-top-left-radius: 20%;
   }
   /* change the margin separating the anchor link elements now dividing the elements vertically */
   nav a {
