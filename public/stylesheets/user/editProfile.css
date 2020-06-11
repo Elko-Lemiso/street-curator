@@ -1,0 +1,14 @@
+.edit-profile{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.edit-profile .profile-picture img{
+    width: 100px;
+    height: auto;
+    border: grey;
+    border: ;
+    border-radius: 3px;
+}
