@@ -1,10 +1,15 @@
-<link rel="stylesheet" href="/stylesheets/user/signup.css" />
-<h1>LOGIN</h1>
-<form class="login" action="/user/login" method="post">
-    <label for="email">email</label>
-    <input id="email" type="email" name="email" placeholder="f.e. johnwest@maily.com">
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password">
-    <button type="submit">Login</button>
-    <h1>{{errorMessage}}</h1>
-</form>
+<link rel="stylesheet" href="/stylesheets/user/login.css" />
+
+<div class="login">
+    <h1>LOGIN</h1>
+    <form action="/user/login" method="post">
+        <label for="email">E-mail address</label>
+        <input id="email" type="email" name="email" placeholder="Your e-mail address">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" placeholder="******">
+        {{#if errorMessage}}
+            <div class="error-message">{{ errorMessage }}</div>
+        {{/if}}
+        <button type="submit">Login</button>
+    </form>
+</div>

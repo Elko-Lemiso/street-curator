@@ -2,53 +2,5 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-
-.sign-up form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.sign-up form input {
-    width: 100%;
-    max-width: 500px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-}
-
-.sign-up form button {
-    width: 100%;
-    max-width: 500px;
-    background-color: #392F5A;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.sign-up form label {
-    margin-top: 10px;
-}
-
-.sign-up form .form-radio {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-}
-
-.sign-up form .form-radio input,  .sign-up form .form-radio label{
-    width: 75px;
-    margin: 8px 0;
-}
-
-.sign-up form label .italic-text{
-    font-style: italic;
-    color: grey;
+    margin-top: 20px;
 }
