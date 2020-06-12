@@ -103,6 +103,8 @@ app.use('/', require('./routes/map'))
 // app.use('/', require('./routes/user/editProfile'));
 app.use('/', require('./routes/collection'));
 app.use('/', require('./routes/profile'));
+app.use('/', require('./routes/artwork/upload'));
+
 
 module.exports = app;
 

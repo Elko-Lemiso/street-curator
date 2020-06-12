@@ -1,0 +1,26 @@
+<div class="upload">
+    <h1>SIGNUP</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+
+        <label for="input-profile-picture">Profile picture</label>
+        <input type="file" id="input-profile-picture" name="profilePicture">
+
+        <label for="description">Description <span class="italic-text">*required</span></label>
+        <input id="description" type="text" name="description">
+
+        <input type="number" name="longitude">
+        <input type="number" name="latitude">
+
+        <div class="form-radio">
+            <input type="radio" id="public" name="public" value="public">
+            <label for="artist">Public</label>
+            <input type="radio" id="incognito" name="incognito" value="incognito">
+            <label for="incognito">incognito</label>
+        </div>
+        {{#if errorMessage}}
+            <div class="error-message">{{ errorMessage }}</div>
+        {{/if}}
+        <button type="submit">Upload</button>
+    </form>
+    {{!-- <script src="../../public/javascripts/geoLocate.js"></script> --}}
+</div>

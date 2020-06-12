@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const artworkSchema = new Schema({
   city : {type: String, required : true},
+  description: {type: String, required: true},
   location : {longitude: Number, latitude: Number},
   artist : {type: String, required : true},
   reviews : [{type: objectId, ref: Review}],
