@@ -14,7 +14,7 @@ router.get('/editprofile', (req, res, next)=>{
         })
 })
 
-router.post('/editprofile', (req, res, next)=>{
+router.post('/editprofile', uploadCloud.single("something"), (req, res, next)=>{
     
     debugger
 

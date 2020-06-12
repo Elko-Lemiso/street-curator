@@ -1,0 +1,38 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile .top-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.profile .top-section .user-details{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+}
+
+.profile .top-section .user-details img{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.profile .top-section .user-details .user-credentials{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+
+.profile .top-section .profile-actions{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}

@@ -52,7 +52,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 hbs.registerPartials(__dirname + '/views/partials');
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Street Curator | Street Art Exposure';
 
 app.use(session({
   secret: `${SECRET}`,
@@ -103,7 +103,7 @@ app.use('/', require('./routes/map'))
 app.use('/', require('./routes/user/editProfile'));
 app.use('/', require('./routes/user/delete'));
 app.use('/', require('./routes/collection'));
-app.use('/', require('./routes/profile'));
+app.use('/', require('./routes/user/profile'));
 app.use('/', require('./routes/artwork/upload'));
 
 
