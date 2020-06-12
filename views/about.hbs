@@ -1,6 +1,11 @@
 <div>
     <h1>ABOUT US</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, vitae? Quis optio a quae. Molestiae quas quis praesentium veritatis sit sapiente aliquid minima consectetur officiis! Excepturi repudiandae fuga recusandae quas?</p>
+    {{#if tourist}}
+        <p>If you are an artist, you enjoy the pursuit of the aesthetic, and cannot help but leave your print of beauty everywhere this is for you.</p>
+    {{/if}}
+    {{#if artist}}
+        <p>If you are an art enthusiast, you enjoy the pursuit of the aesthetic, this is for you.</p>
+    {{/if}}
 </div>
 <a href="/signup">
     <div><h1>SIGN UP</h1></div>
