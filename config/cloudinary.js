@@ -9,15 +9,16 @@ cloudinary.config({
     api_key: process.env.CLOUDINARY_KEY,
     api_secret: process.env.CLOUDINARY_SECRET
 });
- 
+
+
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
-    folder: 'street-curator-profile-picture',
-    allowedFormats: ['jpg', 'png'],
-    filename: function (req, file, cb) {
-        cb(null, file.originalName);
-      }
-});
+    params: {
+      folder: 'street-curator-profile-picture',
+      format: async (req, file) => {'png', 'jpg'}, 
+      public_id: (req, file) => { file.originalName, file.path}
+    },
+  });
 
 const uploadCloud = multer({ storage: storage });
  
