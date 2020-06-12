@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const pictureSchema = new Schema({
     name: String,
-    path: String,
+    path: { type: String}, //default: '/images/avatar-icon-vector.jpg' 
     originalName: String
 }, {
     timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
