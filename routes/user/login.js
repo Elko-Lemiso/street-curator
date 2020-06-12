@@ -24,6 +24,15 @@ router.post("/user/login", (req, res, next)=>{
         }
         if(bcrypt.compareSync(password, user.password)){
           req.session.currentUser = user;
+          if (user.userType==="tourist") {
+            req.session.artist = false
+            req.session.tourist = true     
+          }
+          else if(user.userType==="artist"){
+            req.session.artist = true
+            req.session.tourist = false
+          }
+          console.log(res.session);
           res.redirect("/explore");
         }else{
           res.render("login", {

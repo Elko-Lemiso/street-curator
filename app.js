@@ -65,13 +65,24 @@ app.use(session({
   })
 }));
 
-function addSession(req, res, next){
+function mapUserSessionDataToHbs(req, res, next){
   if (req.session.currentUser) { 
     res.locals.loggedIn = true;
     res.locals.user = req.session.currentUser
   }          
   next();   
 } 
+
+function mapUserModeToHbs(req,res,next){
+  if(req.session.artist){
+    res.locals.artist = true;
+    res.locals.tourist = false;
+  }else if(req.session.tourist){
+    res.locals.artist = false;
+    res.locals.tourist = true;
+  }
+  next()
+}
 
 function protection(req, res, next){
   if(req.session.currentUser){
@@ -81,15 +92,15 @@ function protection(req, res, next){
     res.redirect('/login')
   }
 }
-app.use(addSession)
-
+app.use(mapUserModeToHbs)
+app.use(mapUserSessionDataToHbs)
 app.use('/', require('./routes/index'));
+app.use('/', mapUserModeToHbs, require('./routes/about'));
 app.use('/', require('./routes/user/signup'));
-app.use('/', require('./routes/about'));
 app.use('/', require('./routes/user/login'));
 app.use('/', require('./routes/explore'));
 app.use('/', require('./routes/map'))
-app.use('/', require('./routes/user/editProfile'));
+// app.use('/', require('./routes/user/editProfile'));
 app.use('/', require('./routes/collection'));
 app.use('/', require('./routes/profile'));
 
