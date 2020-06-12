@@ -24,10 +24,11 @@ p, span{
 
 span{
     font-style: italic;
+    color: grey;
 }
 
 a {
-    color: #00B7FF; 
+    padding: 5px;
 }
 
 .background-green{
@@ -100,4 +101,13 @@ form .form-radio input,  form .form-radio label{
 form label .italic-text{
     font-style: italic;
     color: grey;
+}
+
+button {
+    background-color: #392F5A;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 3px;
+    border-width: 0px;
+    cursor: pointer;
 }
