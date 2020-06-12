@@ -1,20 +1,25 @@
+{{>nav}}
 <div class="upload">
-    <h1>SIGNUP</h1>
+    <h1>UPLOAD</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
 
-        <label for="input-profile-picture">Profile picture</label>
-        <input type="file" id="input-profile-picture" name="profilePicture">
+        <label for="picture">Artwork picture</label>
+        <input type="file" id="picture" name="picture">
 
-        <label for="description">Description <span class="italic-text">*required</span></label>
+        <label for="description">Description</label>
         <input id="description" type="text" name="description">
 
-        <input type="number" name="longitude">
+        <label for="latitiude">Latitude</label>
         <input type="number" name="latitude">
 
+        <label for="longitude">Longitude</label>
+        <input type="number" name="longitude">
+
         <div class="form-radio">
-            <input type="radio" id="public" name="public" value="public">
-            <label for="artist">Public</label>
-            <input type="radio" id="incognito" name="incognito" value="incognito">
+            <input checked="checked" type="radio" id="public" name="incognito" value="false">
+            <label for="public">Public</label>
+
+            <input type="radio" id="incognito" name="incognito" value="true">
             <label for="incognito">incognito</label>
         </div>
         {{#if errorMessage}}
