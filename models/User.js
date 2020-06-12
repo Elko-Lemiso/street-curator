@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const pictureSchema = new Schema({
-    name: String,
-    path: { type: String}, //default: '/images/avatar-icon-vector.jpg' 
-    originalName: String
+    fieldname: { type: String}, 
+    filename: { type: String},
+    originalname: { type: String},
+    path: { type: String}, 
 }, {
     timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
@@ -31,7 +32,7 @@ const userSchema = new Schema({
         type: String,
         required: [true, 'Password is required.']
     },
-    profilePicture : pictureSchema,
+    profilePicture : pictureSchema, 
     visits : {type: Number},
     level : {type: Number},
     userType : {type: String, enum :['tourist','artist'], default: 'tourist'},

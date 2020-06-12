@@ -8,27 +8,34 @@ router.get('/signup', (req, res, next) => {
 });
 
 router.post('/signup', uploadCloud.single('profilePicture'), (req, res, next) =>{
+
     const bcrypt = require('bcrypt');
     const saltRounds = 10;
     const myPlaintextPassword = req.body.password;
     const hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
 
+    let newUser = {
+        username: req.body.username,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: hash,
+        userType: req.body.userType
+    }
+    
+    if(req.file) {
+        newUser.profilePicture = {
+            fieldname: req.file.fieldname,
+            filename: req.file.filename,
+            originalname: req.file.originalname,
+            path: req.file.path,
+        }
+    }
+
     User
-        .create({
-            username: `${req.body.username}`,
-            firstName: `${req.body.firstName}`,
-            lastName: `${req.body.lastName}`,
-            email: `${req.body.email}`,
-            password: `${hash}`,
-            userType: `${req.body.userType}`,
-            profilePicture: {
-                name: req.body.username,
-                path: req.file.url,
-                originalName: req.file.originalName
-              }
-        })
+        .create(newUser)
         .then((user)=>{
-            res.redirect('/');
+            res.redirect('/login');
             console.log(user);
         })
         .catch(error =>{
@@ -37,3 +44,4 @@ router.post('/signup', uploadCloud.single('profilePicture'), (req, res, next) =>
 })
 
 module.exports = router;
+

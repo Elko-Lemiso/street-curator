@@ -2,28 +2,38 @@
 
 <div class="edit-profile">
     <h1>EDIT PROFILE</h1>
+
+    <img src="{{theUser.profilePicture.path}}" alt="">
     <form action="/editprofile" method="post" enctype="multipart/form-data">
         <label for="username">Username <span class="italic-text">*required</span></label>
-        <input id="username" type="text" name="username" value="{{user.username}}">
+        <input id="username" type="text" name="username" value="{{theUser.username}}">
 
         <label for="first-name">First name <span class="italic-text">*required</span></label>
-        <input id="first-name" type="text" name="firstName" value="{{user.firstName}}">
+        <input id="first-name" type="text" name="firstName" value="{{theUser.firstName}}">
 
         <label for="last-name">Last name <span class="italic-text">*required</span></label>
-        <input id="last-name" type="text" name="lastName" value="{{user.lastName}}">
+        <input id="last-name" type="text" name="lastName" value="{{theUser.lastName}}">
 
         <label for="email-address">E-mail address <span class="italic-text">*required</span></label>
-        <input id="email-address" type="text" name="email" value="{{user.email}}">
-
-        <label for="password">Password <span class="italic-text">*required</span></label>
-        <input id="password" type="password" name="password" value="" placeholder="******" >
+        <input id="email-address" type="text" name="email" value="{{theUser.email}}">
 
         <label for="input-profile-picture">Profile picture</label>
         {{#if user.profilePicture}}
-            <div class="profile-picture"><img src="images/avatar-icon-vector.jpg" alt=""></div>
+            <div class="profile-picture"></div>
         {{/if}}
         <input type="file" id="input-profile-picture" name="profilePicture">
 
         <button type="submit">Update profile!</button>
     </form>
+    <a href="/user/delete" class="delete-btn"><button>Delete</button></a>
 </div>
+
+
+        {{!-- <label for="password">Password <span class="italic-text">*required</span></label>
+        <input id="password" type="password" name="password" value="" placeholder="******" > --}}
+
+        {{!-- <label for="input-profile-picture">Profile picture</label>
+        {{#if user.profilePicture}}
+            <div class="profile-picture"><img src="images/avatar-icon-vector.jpg" alt=""></div>
+        {{/if}}
+        <input type="file" id="input-profile-picture" name="profilePicture"> --}}
