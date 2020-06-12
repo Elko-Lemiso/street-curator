@@ -90,7 +90,8 @@ app.use('/', require('./routes/user/login'));
 app.use('/', require('./routes/explore'));
 app.use('/', require('./routes/map'))
 app.use('/', require('./routes/user/editProfile'));
-
+app.use('/', require('./routes/collection'));
+app.use('/', require('./routes/profile'));
 
 module.exports = app;
 

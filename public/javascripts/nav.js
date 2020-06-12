@@ -25,7 +25,6 @@ const links = document.querySelectorAll('nav a');
 // function called in response to a click event on the anchor link
 function handleClick(e) {
   // prevent the default behavior, but most importantly remove the class of .active from those elements with it
-  e.preventDefault();
   links.forEach(link => {
     if (link.classList.contains('active')) {
       link.classList.remove('active');
