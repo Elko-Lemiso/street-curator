@@ -35,7 +35,7 @@ router.post('/signup', uploadCloud.single('profilePicture'), (req, res, next) =>
     User
         .create(newUser)
         .then((user)=>{
-            res.redirect('/');
+            res.redirect('/login');
             console.log(user);
         })
         .catch(error =>{

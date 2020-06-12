@@ -13,3 +13,20 @@
     border-width: 1px;
     border-radius: 3px;
 }
+
+.edit-profile .delete-btn{
+    padding: 0;
+    width: 100%;
+}
+
+.edit-profile .delete-btn button{
+    background-color: indianred;
+    width: 100%;
+    max-width: 500px;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
