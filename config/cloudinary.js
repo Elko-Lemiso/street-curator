@@ -16,7 +16,12 @@ const storage = new CloudinaryStorage({
     params: {
       folder: 'street-curator-profile-picture',
       format: async (req, file) => {'png', 'jpg'}, 
-      public_id: (req, file) => { file.originalName, file.path}
+      public_id: (req, file) => { 
+          file.fieldname,
+          file.filename, 
+          file.originalname, 
+          file.path 
+        }
     },
   });
 

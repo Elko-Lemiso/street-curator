@@ -1,55 +1,35 @@
 const express = require('express');
 const router  = express.Router();
 const User = require('../../models/User');
-const bcrypt = require('bcrypt');
-const cloudinary = require('cloudinary').v2;
+const uploadCloud = require('../../config/cloudinary');
 
 router.get('/editprofile', (req, res, next)=>{
-    res.render('user/editProfile');
+    User.findOne({ username: req.session.currentUser.username})
+        .then((theUser)=>{
+            res.render('user/editProfile', {theUser: theUser});
+        })
+        .catch(error=>{
+            console.log('error', error);
+        })
 })
 
-router.post('/editprofile', uploadCloud.single('profilePicture'), (req, res, next)=>{
-    const bcrypt = require('bcrypt');
-    const saltRounds = 10;
-    const myPlaintextPassword = req.body.password;
-    const hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
-
+router.post('/editprofile', (req, res, next)=>{
+    
     debugger
-    const findUser = req.session.currenUser;
-    const change = {};
 
-    if(req.body.password === ""){
-        change = {
-            username: `${req.body.username}`,
-            firstName: `${req.body.firstName}`,
-            lastName: `${req.body.lastName}`,
-            email: `${req.body.email}`,
-            userType: `${req.body.userType}`,
-            profilePicture: {
-            name: req.body.username,
-            path: req.file.url,
-            originalName: req.file.originalName
-          }
+    const username = req.body.username;
+
+    const findUser = req.session.currentUser;
+    const change = {
+            username: req.body.username,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
         }
-    } else {
-        change = {
-            username: `${req.body.username}`,
-            firstName: `${req.body.firstName}`,
-            lastName: `${req.body.lastName}`,
-            email: `${req.body.email}`,
-            password: `${hash}`,
-            userType: `${req.body.userType}`,
-            profilePicture: {
-            name: req.body.username,
-            path: req.file.url,
-            originalName: req.file.originalName
-          }
-        }
-    }
 
     User.findByIdAndUpdate(findUser, change)
-        .then(user=>{
-            
+        .then(()=>{
+            res.render('user/editProfile');
         })
         .catch(error=>{
             console.log(error, "Error updating userprofile")
@@ -57,3 +37,15 @@ router.post('/editprofile', uploadCloud.single('profilePicture'), (req, res, nex
 })
 
 module.exports = router;
+
+    // const bcrypt = require('bcrypt');
+    // const saltRounds = 10;
+    // const myPlaintextPassword = req.body.password;
+    // const hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
+
+    // password: `${req.body.password}`,
+    // ,profilePicture: {
+    //     name: req.body.username,
+    //     path: req.file.url,
+    //     originalName: req.file.originalName
+    // }
