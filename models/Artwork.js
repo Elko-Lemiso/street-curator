@@ -11,11 +11,12 @@ const pictureSchema = new Schema({
 });
 
 const artworkSchema = new Schema({
-  city : {type: String},
+  city : {type: String, required: true},
   description: {type: String, required: true},
-  location : {longitude: Number, latitude: Number},
+  location : {longitude: String, latitude: String},
   artist : {type: String, required : true},
-  // reviews : [{type: objectId, ref: Review}],
+  artistId : {type: Schema.ObjectId , ref: 'User'},
+  reviews : [{type: Schema.ObjectId , ref: 'Review'}],
   likes : {type: Number},
   visits : {type: Number},
   picture : pictureSchema,

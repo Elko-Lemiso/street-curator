@@ -58,7 +58,7 @@ app.use(session({
   secret: `${SECRET}`,
   resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 },
+  cookie: { maxAge: 86400000 },
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60 // 1 day
@@ -92,6 +92,7 @@ function protection(req, res, next){
     res.redirect('/login')
   }
 }
+
 app.use(mapUserModeToHbs)
 app.use(mapUserSessionDataToHbs)
 app.use('/', require('./routes/index'));
@@ -102,7 +103,8 @@ app.use('/', require('./routes/explore'));
 app.use('/', require('./routes/map'))
 app.use('/', require('./routes/user/editProfile'));
 app.use('/', require('./routes/user/delete'));
-app.use('/', require('./routes/collection'));
+app.use('/', require('./routes/user/logout'));
+app.use('/', require('./routes/user/collection'));
 app.use('/', require('./routes/user/profile'));
 app.use('/', require('./routes/artwork/upload'));
 

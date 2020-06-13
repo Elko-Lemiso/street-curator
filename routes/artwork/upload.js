@@ -9,21 +9,26 @@ router.get('/upload', (req, res, next) => {
 
 
 router.post('/upload', uploadCloud.single('picture'), (req, res, next) =>{
-    let newArtWork = {
-                    city: ``,
-                    description: `${req.body.description}`,
-                    location: {latitude:`${req.body.latitude}`, longitude:`${req.body.longitude}`},
-                    artist: `${req.session.currentUser.username}`,
-                    likes: 0,
-                    visits:0,
-                    incognito: `${req.body.incognito}`,
-                    picture: {
-                        fieldname: req.file.fieldname,
-                        filename: req.file.filename,
-                        originalname: req.file.originalname,
-                        path: req.file.path,nalname: req.file.originalName
-                        },
+
+    debugger
+
+    const newArtWork = {
+        city: req.body.city,
+        description: req.body.description,
+        location: {latitude: req.body.latitude, longitude: req.body.longitude},
+        artist: req.session.currentUser.username,
+        artistId: req.session.currentUser._id,
+        likes: 0,
+        visits: 0,
+        incognito: req.body.incognito,
+        picture: {
+            fieldname: req.file.fieldname,
+            filename: req.file.filename,
+            originalname: req.file.originalname,
+            path: req.file.path,nalname: req.file.originalName
+        },
     }
+
     console.log(newArtWork);
     Artwork
         .create(newArtWork)

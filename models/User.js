@@ -36,7 +36,7 @@ const userSchema = new Schema({
     visits : {type: Number},
     level : {type: Number},
     userType : {type: String, enum :['tourist','artist'], default: 'tourist'},
-    artistArtworks: [{type: Schema.ObjectId , ref: 'Artwork' }],
+    artworks: [{type: Schema.ObjectId , ref: 'Artwork' }],
     visitedArtworks: [{type: Schema.ObjectId , ref: 'Artwork' }]
 },{ 
     timestamps: { createdAt: "created_at", updatedAt: "updated_at" }

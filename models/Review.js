@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-  artWork : {type: ObjectId , ref: Artwork },
-  creator : String,
-  review : String,
+  artwork : {type: Schema.ObjectId , ref: Artwork },
+  creator : {type: String},
+  review : {type: String},
 });
 
 const Review = mongoose.model('Review', reviewSchema, 'reviews');

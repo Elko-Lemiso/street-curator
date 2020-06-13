@@ -4,6 +4,9 @@ const User = require('../../models/User');
 const uploadCloud = require('../../config/cloudinary');
 
 router.get('/editprofile', (req, res, next)=>{
+    
+    if(!req.session.currentUser)res.redirect('/login')
+
     User.findOne({ username: req.session.currentUser.username})
         .then((theUser)=>{
             res.render('user/editProfile', {theUser: theUser});
@@ -15,8 +18,6 @@ router.get('/editprofile', (req, res, next)=>{
 })
 
 router.post('/editprofile', uploadCloud.single("something"), (req, res, next)=>{
-    
-    debugger
 
     const username = req.body.username;
 

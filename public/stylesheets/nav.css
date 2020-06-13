@@ -85,13 +85,13 @@ a.active span {
 }
 
 /* on smaller viewports show the navigation bar on the side, attached to the left of the screen */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   nav {
     flex-direction: flex;
     width: 100%;
     justify-self: start;
     border-radius: 0 30px 30px 0;
-    padding: 2rem 1.15rem 2rem 0.75rem;
+    padding: 1.2rem 0.75rem 1.2rem 0.75rem;
     bottom: 0%;
     left: 0px;
     z-index: 1;
@@ -102,6 +102,7 @@ a.active span {
   /* change the margin separating the anchor link elements now dividing the elements vertically */
   nav a {
     margin:  0;
+    padding: 0.1rem;
   }
   nav a span{
     font-size: 1rem;

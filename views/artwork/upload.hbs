@@ -9,18 +9,22 @@
         <label for="description">Description</label>
         <input id="description" type="text" name="description">
 
+        <label for="city">City</label>
+        <input id="city" type="text" name="city">
+
         <label for="latitiude">Latitude</label>
-        <input type="number" name="latitude">
+        <input type="text" name="latitude">
 
         <label for="longitude">Longitude</label>
-        <input type="number" name="longitude">
+        <input type="text" name="longitude">
 
+        <label for="incognito">Artist details?</label>
         <div class="form-radio">
             <input checked="checked" type="radio" id="public" name="incognito" value="false">
             <label for="public">Public</label>
 
             <input type="radio" id="incognito" name="incognito" value="true">
-            <label for="incognito">incognito</label>
+            <label for="incognito">Incognito</label>
         </div>
         {{#if errorMessage}}
             <div class="error-message">{{ errorMessage }}</div>
