@@ -7,11 +7,10 @@ router.get('/profile', (req, res, next) => {
     if(!req.session.currentUser) res.redirect('/login')
 
     User.findOne({username: req.session.currentUser.username})
-        .populate('artistId')
+        .populate('artworks')
         .then((theUser)=>{
-
             console.log(theUser);
-            res.render('user/profile', {theUser: theUser}); 
+            res.render('user/profile', {theUser}); 
         })
         .catch((error)=>{
             console.log(error, 'Error')
