@@ -20,25 +20,29 @@ router.get('/list', (req, res, next) => {
   
 // to see raw data in your browser, just go on: http://localhost:3000/map/api
 router.get('/map/api', (req, res, next) => {
-	Artwork.find({}, (error, allArtworksFromDB) => {
-		if (error) { 
-			next(error); 
-		} else { 
-			res.status(200).json({ artworks: allArtworksFromDB });
-		}
-	});
+    Artwork.find({})
+        .then((allArtworksFromDB)=>{
+            res.json({ artworks: allArtworksFromDB });
+        })
+        .catch((error)=>{
+            console.log(error, 'error getting all artworks and population into json');
+            next(error);
+        })
 });
+
 
 // to see raw data in your browser, just go on: http://localhost:3000/map/api/someIdHere
 router.get('/map/api/:id', (req, res, next) => {
 	let artworkId = req.params.id;
-	Artwork.findOne({_id: artworkId}, (error, oneArtworkFromDB) => {
-		if (error) { 
-			next(error) 
-		} else { 
-			res.status(200).json({ artwork: oneArtworkFromDB }); 
-		}
-	});
+    Artwork.findOne({_id: artworkId})
+        .then((oneArtworkFromDB)=>{
+            res.json({ artwork: oneArtworkFromDB });
+        })
+        .catch((error)=>{
+            console.log(error, 'error getting artwork and population into json');
+            next(error);
+        })
 });
+
 
 module.exports = router;
