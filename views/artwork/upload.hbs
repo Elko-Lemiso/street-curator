@@ -1,4 +1,5 @@
 {{>nav}}
+<link rel="stylesheet" href="/stylesheets/artwork/upload.css" />
 <div>
     <a href="/logout">Log out</a>
 </div>
@@ -16,9 +17,11 @@
         <input id="city" type="text" name="city">
 
         <label>Address <span>*required</span></label>
-        <input id="latitude" type="text" name="latitude" placeholder="latitude" >
-        <input id="longitude" type="text" name="longitude" placeholder="longitude">
-        <button id="submitAddress"></button>
+        <input id="address" type="text" name="address" placeholder="Groeninxstraat 19, Rotterdam" >
+        <a id="submitAddress">Get Google Maps location</a>
+        <input id="latitude" type="text" name="latitude" placeholder="f.e. 51.9303477" >
+        <input id="longitude" type="text" name="longitude" placeholder="f.e. 4.4516448">
+        
 
         <label for="incognito">Artist details? <span>*required</span></label>
         <div class="form-radio">
@@ -32,9 +35,11 @@
             <div class="error-message">{{ errorMessage }}</div>
         {{/if}}
         <button type="submit">Upload</button>
+
     </form>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFPpH8SXiJpcZvHbUOmOKAhJ2rwOm7l3c"></script>
+<div id="map" style="display: none"></div>
 
-<script type="text/javascript" src="/javascripts/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJmuWI-AKT7ojvQqL3zkekDrCpJxa1G9A"></script>
+<script type="text/javascript" src="/javascripts/upload.js"></script>

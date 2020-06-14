@@ -1,5 +1,14 @@
+.artwork-map{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center; */
+}
+
 #map {
     margin-top: 20px;
     width: 90%;
-    height: 400px;
-  }
+    height: 450px;
+    border-radius: 20px;
+
+}
