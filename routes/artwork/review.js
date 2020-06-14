@@ -1,22 +1,27 @@
 const express = require('express');
 const router  = express.Router();
-const User = require('../../models/User.js')
+const Artwork = require('../../models/Artwork.js')
 const Review = require('../../models/Review.js')
 
 router.post("/review", (res, req, next)=>{
     debugger
-    console.log(req.body);
+    console.log(res.body);
     let newReview = {
-        artwork : req.body.id,
-        creator : req.session.user._id,
-        review : req.body.review
+        artwork : res.body.id,
+        creator : res.session.currentUser._id,
+        review : res.body.review
     }
-    
+    Artwork
+        .findOneAndUpdate({_id : res.body.id}, {$inc : {'numberOfReviews' : 1}})
+        .catch(error =>{
+            console.log('Error :', error)
+        })
+
     Review
     .create(newReview)
     .then((review)=>{
         console.log(review);
-        res.redirect('/list');
+        req.redirect('/list');
     })
     .catch(error =>{
         console.log('Error :', error)

@@ -1,10 +1,10 @@
 const express = require('express');
 const router  = express.Router();
 const Artwork = require('../../models/Artwork');
+const text = require('body-parser/lib/types/text');
 
 
 router.get("/artwork/details/:artworkId", (req,res)=>{
-    debugger	
     Artwork
       .findById(req.params.artworkId)
       .then(artwork =>{
