@@ -1,7 +1,7 @@
 window.onload = () => {
     const rotterdam = {
-      lat: 51.927903, 
-      lng: 4.350744
+      lat: 51.9294641, 
+      lng: 4.4718353
     };
     
     const markers = []
@@ -15,31 +15,89 @@ window.onload = () => {
       lat: undefined,
       lng: undefined
     }; 
-  };
 
-function getArtworks() {
-    axios.get("/map/api")
-        .then( response => {
-            placeArtworks(response.data.artworks);
-        })
-        .catch(error => {
-            console.log(error);
-        })
-}
+    function getArtworks() {
+        axios.get("/map/api")
+            .then( response => {
+                placeArtworks(response.data.artworks);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    
+    function placeArtworks(artworks){
+        artworks.forEach(function(artwork){
 
-function placeArtworks(artworks){
-    artworks.forEach(function(artwork){
-        const center = {
-            lat: artwork.location.coordinates[1],
-            lng: artwork.location.coordinates[0]
-        };
-        const pin = new google.maps.Marker({
-            position: center,
-            map: map,
-            title: artwork.name
+            const center = {
+                lat: artwork.location.coordinates[1],
+                lng: artwork.location.coordinates[0]
+            };
+            const pin = new google.maps.Marker({
+                position: center,
+                map: map,
+                title: artwork.artist,
+                icon: `https://res.cloudinary.com/dconurgxl/image/upload/v1592162823/street-curator-profile-picture/artwork-locations_dijfcp.png`
+            });
+            markers.push(pin);
         });
-        markers.push(pin);
-    });
-}
+    }
+     
+    getArtworks();
+
+    const geocoder = new google.maps.Geocoder();
  
-getArtworks();
+    // document.getElementById('submitAddress').addEventListener('click', function () {
+    //     geocodeAddress(geocoder, map);
+    // });
+    
+    // function geocodeAddress(geocoder, resultsMap) {
+    //     let address = document.getElementById('address').value;
+        
+    //     geocoder.geocode({ 'address': address }, function (results, status) {
+        
+    //         if (status === 'OK') {
+    //         resultsMap.setCenter(results[0].geometry.location);
+    //         let marker = new google.maps.Marker({
+    //             map: resultsMap,
+    //             position: results[0].geometry.location
+    //         });
+    //         document.getElementById('latitude').value = results[0].geometry.location.lat();
+    //         document.getElementById('longitude').value = results[0].geometry.location.lng();
+    //         } else {
+    //         alert('Geocode was not successful for the following reason: ' + status);
+    //         }
+    //     });
+    // }
+
+  
+    // Try to get a geolocation object from the web browser
+    if (navigator.geolocation) {
+     
+        // Get current position, the permissions dialog will pop up
+        navigator.geolocation.getCurrentPosition(function (position) {
+            // Create an object to match Google's Lat-Lng object format
+            const center = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            console.log('center: ', center)
+
+            const pin = new google.maps.Marker({
+                position: center,
+                map: map,
+                title: `This is you!`,
+                icon: `https://res.cloudinary.com/dconurgxl/image/upload/v1592162823/street-curator-profile-picture/your-location_ywxak5.png`,
+            });
+            markers.push(pin);
+
+            // User granted permission, center the map in the position we got
+        }, function () {
+            console.log('Error in the geolocation service.');
+        });
+    } else {
+      console.log('Browser does not support geolocation.');
+    }
+};
+
