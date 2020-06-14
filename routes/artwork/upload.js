@@ -10,12 +10,17 @@ router.get('/upload', (req, res, next) => {
 
 router.post('/upload', uploadCloud.single('picture'), (req, res, next) =>{
 
+    const location = {
+        type: 'Point',
+        coordinates: [req.body.longitude, req.body.latitude]
+      };
+
     debugger
 
     const newArtWork = {
         city: req.body.city,
         description: req.body.description,
-        location: {latitude: req.body.latitude, longitude: req.body.longitude},
+        location: location,
         artist: req.session.currentUser.username,
         artistId: req.session.currentUser._id,
         likes: 0,

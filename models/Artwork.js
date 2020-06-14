@@ -13,7 +13,7 @@ const pictureSchema = new Schema({
 const artworkSchema = new Schema({
   city : {type: String, required: true},
   description: {type: String, required: true},
-  location : {longitude: String, latitude: String},
+  location: { type: { type: String }, coordinates: [Number] },
   artist : {type: String, required : true},
   artistId : {type: Schema.ObjectId , ref: 'User'},
   reviews : [{type: Schema.ObjectId , ref: 'Review'}],
@@ -24,6 +24,8 @@ const artworkSchema = new Schema({
 },{ 
   timestamps : true
 });
+
+artworkSchema.index({ location: '2dsphere' });
 
 const Artwork = mongoose.model('Artwork', artworkSchema, 'artworks');
 
