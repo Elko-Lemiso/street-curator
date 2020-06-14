@@ -34,8 +34,6 @@ router.post('/upload', uploadCloud.single('picture'), (req, res, next) =>{
         },
     }
 
-debugger
-
     Artwork
         .create(newArtWork)
         .then((theNewArtWork)=>{

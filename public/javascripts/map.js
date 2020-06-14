@@ -28,8 +28,7 @@ window.onload = () => {
     
     function placeArtworks(artworks){
         artworks.forEach(function(artwork){
-    
-          debugger
+
             const center = {
                 lat: artwork.location.coordinates[1],
                 lng: artwork.location.coordinates[0]
@@ -37,7 +36,8 @@ window.onload = () => {
             const pin = new google.maps.Marker({
                 position: center,
                 map: map,
-                title: artwork.artist
+                title: artwork.artist,
+                icon: `https://res.cloudinary.com/dconurgxl/image/upload/v1592162823/street-curator-profile-picture/artwork-locations_dijfcp.png`
             });
             markers.push(pin);
         });
@@ -45,5 +45,59 @@ window.onload = () => {
      
     getArtworks();
 
+    const geocoder = new google.maps.Geocoder();
+ 
+    // document.getElementById('submitAddress').addEventListener('click', function () {
+    //     geocodeAddress(geocoder, map);
+    // });
+    
+    // function geocodeAddress(geocoder, resultsMap) {
+    //     let address = document.getElementById('address').value;
+        
+    //     geocoder.geocode({ 'address': address }, function (results, status) {
+        
+    //         if (status === 'OK') {
+    //         resultsMap.setCenter(results[0].geometry.location);
+    //         let marker = new google.maps.Marker({
+    //             map: resultsMap,
+    //             position: results[0].geometry.location
+    //         });
+    //         document.getElementById('latitude').value = results[0].geometry.location.lat();
+    //         document.getElementById('longitude').value = results[0].geometry.location.lng();
+    //         } else {
+    //         alert('Geocode was not successful for the following reason: ' + status);
+    //         }
+    //     });
+    // }
+
+  
+    // Try to get a geolocation object from the web browser
+    if (navigator.geolocation) {
+     
+        // Get current position, the permissions dialog will pop up
+        navigator.geolocation.getCurrentPosition(function (position) {
+            // Create an object to match Google's Lat-Lng object format
+            const center = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            console.log('center: ', center)
+
+            const pin = new google.maps.Marker({
+                position: center,
+                map: map,
+                title: `This is you!`,
+                icon: `https://res.cloudinary.com/dconurgxl/image/upload/v1592162823/street-curator-profile-picture/your-location_ywxak5.png`,
+            });
+            markers.push(pin);
+
+            // User granted permission, center the map in the position we got
+        }, function () {
+            console.log('Error in the geolocation service.');
+        });
+    } else {
+      console.log('Browser does not support geolocation.');
+    }
 };
 
