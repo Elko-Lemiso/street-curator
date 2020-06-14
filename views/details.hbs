@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/stylesheets/user/profile.css" />
 {{>nav}}
 <div class="post">
                 <div class="user-location">
@@ -34,3 +35,9 @@
                     </div>
                 </div>
             </div>
+            <form action="/review" method="POST">
+                <input type="text" name="review" placeholder ="Leave a comment" value="">
+                <input type="text" value="{{artwork._id}}" name="id">
+                <button type="submit">Submit</button>
+            </form>
+            
