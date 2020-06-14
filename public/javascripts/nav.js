@@ -10,7 +10,7 @@ const navigationOptions = [
     color: '#C9379D'
   },
   {
-    name: 'collection',
+    name: 'list',
     color: '#E6A919'
   },
   {
