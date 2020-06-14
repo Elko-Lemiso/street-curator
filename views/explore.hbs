@@ -3,9 +3,11 @@
 <div id="explore">
     <h1>WHERE ARE WE GOING?</h1>
     <form action="post">
-        <select name="locations" id="">
-            <option value="Rotterdam">Rotterdam</option>
-            <option value="Amsterdam">Amsterdam</option>
+        <select name="locations" id="location">
+            <option value="" hidden>Select a location</option>
+            <option value="/list">Rotterdam</option>
+            <option value="/list">Amsterdam</option>
         </select>
     </form>
 </div>
+<script src="/javascripts/explore.js"></script>

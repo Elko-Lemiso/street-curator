@@ -30,7 +30,7 @@ router.post('/upload', uploadCloud.single('picture'), (req, res, next) =>{
             fieldname: req.file.fieldname,
             filename: req.file.filename,
             originalname: req.file.originalname,
-            path: req.file.path,nalname: req.file.originalName
+            path: req.file.path, nalname: req.file.originalName
         },
     }
 

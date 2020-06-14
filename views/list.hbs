@@ -1,0 +1,6 @@
+{{>nav}}
+<div>
+    {{#each allLocations}}
+            <p><a href="/artwork/details/{{this._id}}">{{this.city}}, and the coordinates are {{this.location.coordinates}}, find more here</a></p>
+    {{/each}}
+</div>
