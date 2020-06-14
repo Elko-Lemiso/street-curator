@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const Artwork = require('../../models/Artwork')
+const User = require('../../models/User')
 const uploadCloud = require('../../config/cloudinary');
 
 router.get('/upload', (req, res, next) => {
@@ -14,8 +15,6 @@ router.post('/upload', uploadCloud.single('picture'), (req, res, next) =>{
         type: 'Point',
         coordinates: [req.body.longitude, req.body.latitude]
       };
-
-    debugger
 
     const newArtWork = {
         city: req.body.city,
@@ -34,14 +33,21 @@ router.post('/upload', uploadCloud.single('picture'), (req, res, next) =>{
         },
     }
 
-    console.log(newArtWork);
+debugger
+
     Artwork
         .create(newArtWork)
-        .then((user)=>{
-            res.redirect('/explore');
+        .then((theNewArtWork)=>{
+            return User.update({username: req.session.currentUser.username}, {$push: {artworks: theNewArtWork.id}})
         })
         .catch(error =>{
             console.log('This is the invalid field ->', error.field)
+        })
+        .then(()=>{
+            res.redirect('/explore');
+        })
+        .catch(error =>{
+            console.log('Error occured with redirecting', error);
         })
 })
 

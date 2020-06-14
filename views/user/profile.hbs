@@ -21,7 +21,7 @@
         {{#each theUser.artworks}}
             <div class="post">
                 <div class="user-location">
-                    <p class="username capitalize">{{user.username}}</p>
+                    <p class="username capitalize">{{theUser.username}}</p>
                     <span>Location: {{this.city}}</span>
                 </div>
                 <div class="images-response">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="description-comments">
                     <div class="description">
-                        <p class="username capitalize">{{user.username}}</p>
+                        <p class="username capitalize">{{this.artist}}</p>
                         <span>:</span>
                         <p class="user-description">{{this.description}}</p>
                     </div>

@@ -25,6 +25,7 @@ p, span{
 span{
     font-style: italic;
     color: grey;
+    font-size: 1rem;
 }
 
 a {
