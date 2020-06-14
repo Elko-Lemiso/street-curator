@@ -7,7 +7,7 @@ const pictureSchema = new Schema({
   originalname: { type: String},
   path: { type: String}, 
 }, {
-  timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
+  timestamps: { createdAt: "created_at", updatedAt: "updated_at"}
 });
 
 const artworkSchema = new Schema({
@@ -17,6 +17,7 @@ const artworkSchema = new Schema({
   artist : {type: String, required : true},
   artistId : {type: Schema.ObjectId , ref: 'User'},
   reviews : [{type: Schema.ObjectId , ref: 'Review'}],
+  numberOfReviews: {type:Number},
   likes : {type: Number},
   visits : {type: Number},
   picture : pictureSchema,

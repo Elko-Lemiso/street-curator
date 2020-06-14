@@ -22,6 +22,7 @@ router.post('/upload', uploadCloud.single('picture'), (req, res, next) =>{
         location: location,
         artist: req.session.currentUser.username,
         artistId: req.session.currentUser._id,
+        numberOfReviews: 0,
         likes: 0,
         visits: 0,
         incognito: req.body.incognito,
