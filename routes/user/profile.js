@@ -1,13 +1,13 @@
 const express = require('express');
 const router  = express.Router();
-const User = require('../../models/User')
-const Artwork = require('../../models/Artwork')
+const User = require('../../models/User.js')
+const Artwork = require('../../models/Artwork.js')
 
 router.get('/profile', (req, res, next) => {
     if(!req.session.currentUser) res.redirect('/login')
-    
+
     User.findOne({username: req.session.currentUser.username})
-        .populate('artworks')
+        .populate('artistId')
         .then((theUser)=>{
 
             console.log(theUser);
