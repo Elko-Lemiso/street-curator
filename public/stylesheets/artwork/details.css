@@ -1,0 +1,85 @@
+.artwork-details{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 150px;
+    max-width: 600px;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}
+
+.artwork-details .username{
+    font-weight: bold;
+}
+
+.artwork-details .posts-section{
+    padding-top: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artwork-details .posts-section .post{
+    width: 80%;
+}
+
+.artwork-details .user-location, .artwork-details .social-recognition{
+    width: 100%;
+}
+
+.artwork-details .artwork-images{
+    border-color: grey;
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.artwork-details .artwork-images img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.artwork-details .images-response .social-recognition{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.artwork-details .images-response .social-recognition a{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+
+}
+
+.artwork-details .images-response .social-recognition .stars-icon, .artwork-details .images-response .social-recognition .comments-icon {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.artwork-details .description-comments .description{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.artwork-details .description-comments .comments{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.bold{
+    font-weight: 800;
+}
