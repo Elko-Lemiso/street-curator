@@ -1,13 +1,26 @@
 body{
     height: 100vh;
+    margin-bottom: 0px;
 }
 
-.title{
+.landing-page .title{
     position: absolute;
-    top: 10%;
-    width: 50%;
+    top: 7.5%;
+    width: 70%;
     text-align: center;
     font-weight: 800;
+    color: rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 3px 2px rgba(255, 255, 255, 1);
+}
+
+.landing-page .sub-title{
+    color: white;
+    font-weight: 800;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.678);
+}
+
+.landing-page span{
+    color: white;
 }
 
 .landing-page{
@@ -16,6 +29,13 @@ body{
     align-items: center;
     width: 100%;
     height: 100%;
+}
+
+.landing-page a{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .landing-page .left-section, .landing-page .right-section{
@@ -27,19 +47,22 @@ body{
 }
 
 .landing-page .left-section{
-    background-color: #DAE7E2;
+    background-color: rgb(225, 235, 231);
 }
 
 .landing-page .right-section{
-    background-color: #FFEBFC;
+    background-color: rgb(255, 240, 253);
 }
 
 .landing-page .box{
     box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
-    width: 60%;
+    width: 70%;
     height: 40%;
     display: flex;
     flex-direction: column;
+    color: black;
+    text-shadow: 1px 2px 2px rgba(255, 255, 255, 1);
+    cursor: pointer;
 }
   
 .landing-page .right-box{
@@ -50,4 +73,162 @@ body{
 .landing-page .left-box{
     background: url('https://res.cloudinary.com/dconurgxl/image/upload/v1592227178/street-curator-profile-picture/street-curator_xfiybn.jpg');
     background-position: center;
+}
+
+.landing-page .content-positioning{
+    height: 70%;
+    width: 70%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-page .layer{
+    transition: background-color 2s;
+    width: 100%;
+    height: 100%;
+}
+
+.landing-page .parent{
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: transparent;
+}
+
+.landing-page .right-box .layer:hover{
+    background-color: rgba(225, 235, 231, 0.8);
+}
+
+.landing-page .left-box .layer:hover{
+    background-color: rgba(255, 240, 253, 0.8);
+}
+
+
+.landing-page .artist-text, .landing-page .tourist-text{
+    transform: rotateY(-180deg);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.landing-page .cta-button{
+    background: white;
+    color: black;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: rotateY(-180deg);
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 5;
+}
+
+.hide{
+    display: none;
+}
+
+.landing-page .right-box .cta-button{
+    border: solid 6px rgb(204, 219, 213);
+}
+.landing-page .right-box .cta-button:hover{
+    border: solid 6px rgb(235, 210, 231);
+}
+
+.landing-page .left-box .cta-button{
+    border: solid 6px  rgb(235, 210, 231);
+}
+
+.landing-page .left-box .cta-button:hover{
+    border: solid 6px rgb(204, 219, 213);
+}
+
+.flip-vertical-left {
+	-webkit-animation: flip-vertical-left 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-vertical-left 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes flip-vertical-left {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(-180deg);
+              transform: rotateY(-180deg);
+    }
+}
+@keyframes flip-vertical-left {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(-180deg);
+              transform: rotateY(-180deg);
+    }
+}
+
+@media (max-width: 700px) {
+    .landing-page .title{
+        font-size: 1.7rem;
+        position: absolute;
+        top: 40px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .landing-page{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .landing-page p{
+        font-size: 0.8rem;
+    }
+
+    .landing-page .left-section, .landing-page .right-section{
+        width: 100%;
+    }
+
+    .landing-page .title{
+        position: absolute;
+        top: 40%;
+        width: 80%;
+        text-align: center;
+        font-weight: 800;
+        color: rgba(0, 0, 0, 0.6);
+        text-shadow: 2px 3px 2px rgba(255, 255, 255, 1);
+    }
+
+    .landing-page .content-positioning{
+        padding: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .landing-page .title{
+        font-size: 1.2rem;
+        position: absolute;
+        width: 90%;
+        top: 45%;
+    }
+
+    .landing-page .box{
+        height: 60%;
+    }
+}
+
+@media (max-width: 360px) {
+    .landing-page .title{
+        font-size: 1rem;
+        position: absolute;
+        top: 45%;
+        width: 95%;
+    }
+
+    .landing-page .box{
+        height: 60%;
+    }
 }
