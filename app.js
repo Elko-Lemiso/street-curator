@@ -8,7 +8,6 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 const localhost    = process.env.PORT;
-const googleApiKey = process.env.GOOGLE_API_KEY;
 const connectionpassword = process.env.CONNECTIONPASSWORD;
 const SECRET = process.env.SECRET;
 const session    = require("express-session");
@@ -39,6 +38,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.locals.googleApiKey = process.env.GOOGLE_API_KEY;
+
 // Express View engine setup
 app.use(require('node-sass-middleware')({
   src:  path.join(__dirname, 'public'),
@@ -57,7 +58,6 @@ app.locals.title = 'Street Curator | Street Art Exposure';
 
 app.use(session({
   secret: `${SECRET}`,
-  googleApiKey: `${googleApiKey}`, 
   resave: true,
   saveUninitialized: true,
   cookie: { maxAge: 86400000 },
