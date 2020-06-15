@@ -1,10 +1,9 @@
 <link rel="stylesheet" href="/stylesheets/list.css">
 {{>nav}}
-<div>
+<div class= "wrapper">
     {{#each allLocations}}
-        <div>
-            <img src="{{this.picture.path}}" alt="">
-            <p><a href="/artwork/details/{{this._id}}"> {{this.city}}, and the coordinates are {{this.location.coordinates}}, find more here</a></p>
+        <div class="box">
+            <a href="/artwork/details/{{this._id}}"><img src="{{this.picture.path}}" alt=""></a>
         </div>
     {{/each}}
 </div>

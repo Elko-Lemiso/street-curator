@@ -27,6 +27,7 @@
                         <p class="username capitalize">{{this.artist}}</p>
                         <span>Location: {{this.city}}</span>
                         <a href="/delete/{{this._id}}">Delete</a>
+                        <a href ="/update/{{this._id}}">Update</a>
                     </div>
                     <div class="images-response">
                         <div class="artwork-images">
@@ -50,7 +51,6 @@
                             <p class="user-description"> {{this.description}}</p>
                         </div>
                         <div class="description-comments">
-                            <p class="bold">Comments:</p>
                             {{#each this.reviews}}
                                 <span>{{this.creator}}</span>
                                 <p>{{this.review}}</p>
@@ -68,6 +68,7 @@
                         <p class="username capitalize">{{this.artist}}</p>
                         <span>Location: {{this.city}}</span>
                         <a href="/delete/{{this._id}}">Delete</a>
+                        <a href ="/update/{{this._id}}">Update</a>
                     </div>
                     <div class="images-response">
                         <div class="artwork-images">
@@ -93,7 +94,6 @@
                             <p class="user-description"> {{this.description}}</p>
                         </div>
                         <div class="description-comments">
-                            <p class="bold">Comments:</p>
                             {{#each artwork.reviews}}
                                 <span>{{this.creator}}</span>
                                 <p>{{this.review}}</p>

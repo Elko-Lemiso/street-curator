@@ -1,20 +1,12 @@
-{{>nav}}
 <link rel="stylesheet" href="/stylesheets/artwork/upload.css" />
-<div>
-    <a href="/logout">Log out</a>
-</div>
-<div class="upload">
-    <h1>UPLOAD</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-
-        <label for="picture">Artwork picture <span>*required</span></label>
-        <input type="file" id="picture" name="picture">
+<h1>UPDATE</h1>
+<form action="/update/{{artwork._id}}" method="post" enctype="multipart/form-data">
 
         <label for="description">Description <span>*required</span></label>
-        <input id="description" type="text" name="description">
+        <input value = "{{artwork.description}}" id="description" type="text" name="description">
 
         <label for="city">City <span>*required</span></label>
-        <input id="city" type="text" name="city">
+        <input value = "{{artwork.city}}" id="city" type="text" name="city">
 
         <label>Address <span>*required</span></label>
         <input id="address" type="text" name="address" placeholder="Groeninxstraat 19, Rotterdam" >
@@ -33,10 +25,8 @@
         {{#if errorMessage}}
             <div class="error-message">{{ errorMessage }}</div>
         {{/if}}
-        <button type="submit">Upload</button>
-
-    </form>
-</div>
+        <button type="submit">Update</button>
+</form>
 
 <div id="map" style="display: none"></div>
 <script src="https://maps.googleapis.com/maps/api/js?key={{googleApiKey}}"></script>

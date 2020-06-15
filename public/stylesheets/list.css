@@ -1,3 +1,44 @@
 body{
     background-color: #dcd2e6;
 }
+.wrapper{
+    width: 100%;
+}
+.box{
+    display: flex;
+    flex-direction: row;
+    max-width:10vw;
+    min-width:10vw;
+    margin-left: 3rem;
+    margin-top: 3rem;
+}
+.box p a{
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+}
+.box img{
+    padding: 0rem;
+    max-width:10vw;
+    min-width:10vw;
+}
+.box img:hover {
+    animation: scale-up-tl 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.box img:hover ~ p a { visibility: visible ; }
+
+@keyframes scale-up-tl {
+    0% {
+        max-width:20vw;
+        min-width:20vw;
+        transform: scale(0.5);
+        transform-origin: 0% 0%;
+    }
+    100% {
+        max-width:20vw;
+        min-width:20vw;
+        transform: scale(1);
+        transform-origin: 0% 0%;
+    }
+  }
+  

@@ -18,9 +18,6 @@ router.get('/editprofile', (req, res, next)=>{
 })
 
 router.post('/editprofile', uploadCloud.single("something"), (req, res, next)=>{
-
-    const username = req.body.username;
-
     const findUser = req.session.currentUser;
     const change = {
             username: req.body.username,
