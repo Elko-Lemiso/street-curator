@@ -64,9 +64,12 @@ a:before {
 }
 /* when active */
 /* specify the colors dictated by the custom properties */
-a.active {
-  background: var(--hover-bg);
-  color: var(--hover-c);
+a.active span{
+  background-color: lightgray;
+  z-index: 1;
+}
+a.active{
+  background-color: lightgray;
 }
 /* using the color specified by the then updated custom property show the circle of the pseudo element increasing its size and highlighting it momentarily */
 a.active:before {
@@ -111,5 +114,16 @@ a.active span {
   /* remove the negative margin from the svg elements, as the width is to be taken in full */
   nav svg {
     margin: 0;
+  }
+
+  a.active span{
+    background-color: lightgray;
+    z-index: 1;
+    border-radius: 100px;
+    padding: 0.5rem;
+  }
+  a.active{
+    background-color: lightgray;
+    border-radius: 100px;
   }
 }
