@@ -4,18 +4,15 @@ const Artwork = require('../../models/Artwork');
 const User = require('../../models/User');
 
 
-router.get("/add/:artworkId", (req,res)=>{
+router.get("/add/:artworkId", (req,res,next)=>{
     debugger
     Artwork.findById({_id : req.params.artworkId})
       .then(artwork =>{ 
-        User
-        .findOneAndUpdate({_id : req.session.currentUser._id}, {$push : {'visitedArtworks' : req.params.artworkId}})
-      })
-      .then(artwork=>{
-          res.redirect('profile')
+        User.findOneAndUpdate({_id : req.session.currentUser._id}, {$push : {'visitedArtworks' : artwork._id}})
+        res.redirect('/profile')
       })
       .catch(error => {
-        console.error('Cannot render the artwork details', error);
+        console.error('Cannot add to collection', error);
       })
   })
 
