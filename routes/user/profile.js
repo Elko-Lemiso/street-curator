@@ -8,6 +8,7 @@ router.get('/profile', (req, res, next) => {
 
     User.findOne({username: req.session.currentUser.username})
         .populate('artworks')
+        .populate('visitedArtworks')
         .then((theUser)=>{
             console.log(theUser);
             res.render('user/profile', {theUser}); 
