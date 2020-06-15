@@ -18,7 +18,7 @@ router.post("/review", (res, req, next)=>{
     })
     .then((review)=>{
         console.log(review);
-        req.redirect('/list');
+        req.redirect('back');
     })
     .catch(error =>{
         console.log('Error :', error)
