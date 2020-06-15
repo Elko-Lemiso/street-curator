@@ -8,17 +8,14 @@ router.post("/review", (res, req, next)=>{
     console.log(res.body);
     let newReview = {
         artwork : res.body.id,
-        creator : res.session.currentUser._id,
+        creator : res.session.currentUser.username,
         review : res.body.review
     }
-    Artwork
-        .findOneAndUpdate({_id : res.body.id}, {$inc : {'numberOfReviews' : 1}})
-        .catch(error =>{
-            console.log('Error :', error)
-        })
-
     Review
     .create(newReview)
+    .then(review=>{
+         return Artwork.findOneAndUpdate({_id : res.body.id}, {$inc : {'numberOfReviews' : 1}}).findOneAndUpdate({_id : res.body.id}, {$push: {'reviews': review.id}})
+    })
     .then((review)=>{
         console.log(review);
         req.redirect('/list');
@@ -26,6 +23,12 @@ router.post("/review", (res, req, next)=>{
     .catch(error =>{
         console.log('Error :', error)
     })
+
+    
+        .catch(error =>{
+            console.log('Error :', error)
+        })
+
 })
 
 module.exports = router;

@@ -18,6 +18,7 @@ router.post('/upload', uploadCloud.single('picture'), (req, res, next) =>{
 
     const newArtWork = {
         city: req.body.city,
+        reviews : [],
         description: req.body.description,
         location: location,
         artist: req.session.currentUser.username,
