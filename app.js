@@ -8,6 +8,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 const localhost    = process.env.PORT;
+const googleApiKey = process.env.GOOGLE_API_KEY;
 const connectionpassword = process.env.CONNECTIONPASSWORD;
 const SECRET = process.env.SECRET;
 const session    = require("express-session");
@@ -56,6 +57,7 @@ app.locals.title = 'Street Curator | Street Art Exposure';
 
 app.use(session({
   secret: `${SECRET}`,
+  googleApiKey: `${googleApiKey}`, 
   resave: true,
   saveUninitialized: true,
   cookie: { maxAge: 86400000 },

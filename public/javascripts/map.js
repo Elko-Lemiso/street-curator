@@ -28,7 +28,7 @@ window.onload = () => {
     
     function placeArtworks(artworks){
         artworks.forEach(function(artwork){
-
+            
             const center = {
                 lat: artwork.location.coordinates[1],
                 lng: artwork.location.coordinates[0]
@@ -37,39 +37,18 @@ window.onload = () => {
                 position: center,
                 map: map,
                 title: artwork.artist,
-                icon: `https://res.cloudinary.com/dconurgxl/image/upload/v1592162823/street-curator-profile-picture/artwork-locations_dijfcp.png`
+                icon: `https://res.cloudinary.com/dconurgxl/image/upload/v1592162823/street-curator-profile-picture/artwork-locations_dijfcp.png`,
+                url: `https://www.nu.nl`
+
             });
             markers.push(pin);
         });
+
     }
-     
+
     getArtworks();
 
     const geocoder = new google.maps.Geocoder();
- 
-    // document.getElementById('submitAddress').addEventListener('click', function () {
-    //     geocodeAddress(geocoder, map);
-    // });
-    
-    // function geocodeAddress(geocoder, resultsMap) {
-    //     let address = document.getElementById('address').value;
-        
-    //     geocoder.geocode({ 'address': address }, function (results, status) {
-        
-    //         if (status === 'OK') {
-    //         resultsMap.setCenter(results[0].geometry.location);
-    //         let marker = new google.maps.Marker({
-    //             map: resultsMap,
-    //             position: results[0].geometry.location
-    //         });
-    //         document.getElementById('latitude').value = results[0].geometry.location.lat();
-    //         document.getElementById('longitude').value = results[0].geometry.location.lng();
-    //         } else {
-    //         alert('Geocode was not successful for the following reason: ' + status);
-    //         }
-    //     });
-    // }
-
   
     // Try to get a geolocation object from the web browser
     if (navigator.geolocation) {
@@ -82,13 +61,11 @@ window.onload = () => {
                 lng: position.coords.longitude
             };
 
-            console.log('center: ', center)
-
             const pin = new google.maps.Marker({
                 position: center,
                 map: map,
                 title: `This is you!`,
-                icon: `https://res.cloudinary.com/dconurgxl/image/upload/v1592162823/street-curator-profile-picture/your-location_ywxak5.png`,
+                icon: `https://res.cloudinary.com/dconurgxl/image/upload/v1592162823/street-curator-profile-picture/your-location_ywxak5.png`
             });
             markers.push(pin);
 
