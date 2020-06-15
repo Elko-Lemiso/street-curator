@@ -71,9 +71,10 @@ body{
 
 .profile .top-section .profile-actions #upload-btn{
     position: fixed;
-    right: 20px;
+    right: 30%;
     bottom: 75px;
-}
+    background-color: #A8C7BB;
+}    
 
 .profile .posts-section{
     padding-top: 5px;
@@ -133,12 +134,26 @@ body{
     margin-bottom: 10px;
 }
 
-@media (max-width: 350px) {
+@media only screen and (max-width: 700px) {
+    .profile .top-section .profile-actions #upload-btn{
+        right: 15%;
+    }    
+}
+
+@media only screen and (max-width: 550px) {
     .profile .top-section .user-details{
         padding: 0px;
     }
+
     .profile .top-section .user-details img {
         width: 50%;
     }
+
+    .profile .top-section .profile-actions #upload-btn{
+        position: fixed;
+        right: 20px;
+        bottom: 75px;
+    }    
 }
+
 

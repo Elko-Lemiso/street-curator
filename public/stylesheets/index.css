@@ -1,35 +1,53 @@
-.landing-page{
-    width: 100%;
+body{
     height: 100vh;
+}
+
+.title{
+    position: absolute;
+    top: 10%;
+    width: 50%;
+    text-align: center;
+    font-weight: 800;
+}
+
+.landing-page{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.landing-page .left-section, .landing-page .right-section{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.landing-page #info{
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    font-weight: 500 ;
-    color:#392F5A ;
+.landing-page .left-section{
+    background-color: #DAE7E2;
 }
-.landing-page #info h1{
-    padding: 5%;
+
+.landing-page .right-section{
+    background-color: #FFEBFC;
 }
 
 .landing-page .box{
-    text-align: center;
-    padding: 5%;
-    margin: 5%;
-    font-weight: 500 ;
-    color:#392F5A ;
+    box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
+    width: 60%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
 }
-.landing-page .box h1{
-    font-size: 2rem;
+  
+.landing-page .right-box{
+    background: url("https://res.cloudinary.com/dconurgxl/image/upload/v1592227177/street-curator-profile-picture/graffiti-artist_r43why.jpg");
+    background-position: center;
 }
-
-.landing-page .box ul{
-    list-style: none;
-    text-align: center;
+ 
+.landing-page .left-box{
+    background: url('https://res.cloudinary.com/dconurgxl/image/upload/v1592227178/street-curator-profile-picture/street-curator_xfiybn.jpg');
+    background-position: center;
 }
-

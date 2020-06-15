@@ -16,6 +16,7 @@ const MongoStore = require("connect-mongo")(session);
 // To fix the DeprecationWarning
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false)
 
 //.connect('mongodb://localhost/street-curator', {useNewUrlParser: true})
 
