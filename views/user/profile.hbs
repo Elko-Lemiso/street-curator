@@ -51,11 +51,13 @@
                         </div>
                     </div>
                     <div class="description-comments">
-                        <div class="description">
+                   <div class="description">
+                            <p class="username capitalize">{{this.artist}} </p>
+                            <span>: </span>
                             <p class="user-description"> {{this.description}}</p>
                         </div>
-                        <div class="description-comments">
-                            {{#each this.reviews}}
+                        <div class="comments">
+                            {{#each artwork.reviews}}
                                 <span>{{this.creator}}</span>
                                 <p>{{this.review}}</p>
                             {{/each}}
@@ -68,11 +70,15 @@
         {{#if tourist}}
             {{#each theUser.visitedArtworks}}
                 <div class="post">
-                    <div class="user-location">
-                        <p class="username capitalize">{{this.artist}}</p>
-                        <span>Location: {{this.city}}</span>
-                        <a href="/delete/{{this._id}}">Delete</a>
-                        <a href ="/update/{{this._id}}">Update</a>
+                    <div class="artwork-top-section">
+                        <div class="user-location">
+                            <p class="username capitalize">{{this.artist}}</p>
+                            <span>Location: {{this.city}}</span>
+                        </div>
+                        <div class="post-actions">
+                            <a href="/delete/{{this._id}}"><img class="action-icons" src="https://res.cloudinary.com/dconurgxl/image/upload/v1592255542/street-curator-profile-picture/delete_w1lbbh.png" alt="delete"></a>
+                            <a href="/update/{{this._id}}"><img class="action-icons" src="https://res.cloudinary.com/dconurgxl/image/upload/v1592255542/street-curator-profile-picture/update_rap8tc.png" alt="update"></a>
+                        </div>
                     </div>
                     <div class="images-response">
                         <div class="artwork-images">
@@ -97,7 +103,7 @@
                             <span>: </span>
                             <p class="user-description"> {{this.description}}</p>
                         </div>
-                        <div class="description-comments">
+                        <div class="comments">
                             {{#each artwork.reviews}}
                                 <span>{{this.creator}}</span>
                                 <p>{{this.review}}</p>
