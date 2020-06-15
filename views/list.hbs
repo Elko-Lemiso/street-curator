@@ -1,9 +1,11 @@
 <link rel="stylesheet" href="/stylesheets/list.css">
 {{>nav}}
 <div class= "wrapper">
-    {{#each allLocations}}
+    <div class="row">
+        {{#each allLocations}}
         <div class="box">
             <a href="/artwork/details/{{this._id}}"><img src="{{this.picture.path}}" alt=""></a>
         </div>
     {{/each}}
+    </div>  
 </div>

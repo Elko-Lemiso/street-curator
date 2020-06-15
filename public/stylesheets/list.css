@@ -4,26 +4,31 @@ body{
 .wrapper{
     width: 100%;
 }
-.box{
+.row{
     display: flex;
     flex-direction: row;
-    max-width:10vw;
-    min-width:10vw;
+    max-width: 100%;
+    min-width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.box{
+    max-width:27vw;
+    min-width:27vw;
     margin-left: 3rem;
     margin-top: 3rem;
-}
-.box p a{
-    visibility: hidden;
-    position: absolute;
-    z-index: 1;
+    display: inline-block;
 }
 .box img{
     padding: 0rem;
     max-width:10vw;
     min-width:10vw;
+   
 }
 .box img:hover {
     animation: scale-up-tl 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    z-index: inherit;
+    padding: 1rem;
 }
 .box img:hover ~ p a { visibility: visible ; }
 
@@ -35,8 +40,8 @@ body{
         transform-origin: 0% 0%;
     }
     100% {
-        max-width:20vw;
-        min-width:20vw;
+        max-width:30vw;
+        min-width:30vw;
         transform: scale(1);
         transform-origin: 0% 0%;
     }

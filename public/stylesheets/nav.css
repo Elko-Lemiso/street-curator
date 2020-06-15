@@ -13,8 +13,7 @@ nav {
   display: flex;
   background: #fff;
   /* considerable whitespace surrounding the navigation's items */
-  padding: 2rem 3.15rem;
-  border-radius: 0 0 30px 30px;
+  padding: 2rem 0rem;
   display: flex;
   flex-direction: row;
   align-content: center;
