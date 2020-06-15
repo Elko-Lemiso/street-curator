@@ -6,7 +6,7 @@ const Artwork = require('../../models/Artwork.js')
 router.get('/profile', (req, res, next) => {
     if(!req.session.currentUser) res.redirect('/login')
 
-    User.findOne({username: req.session.currentUser.username})
+    User.findOne({_id: req.session.currentUser._id})
         .populate('artworks')
         .populate('visitedArtworks')
         .then((theUser)=>{
