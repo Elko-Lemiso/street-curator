@@ -28,7 +28,17 @@ window.onload = () => {
     
     function placeArtworks(artworks){
         artworks.forEach(function(artwork){
-            
+
+            var contentString = 
+                `<div id="content">`+
+                    `<img class="more-info-img" src='${artwork.picture.path}' alt="${artwork.artist}">`+
+                    `<div id="bodyContent">`+
+                        `<h2 class="more-info-header" class="firstHeading">${artwork.artist}</h2>`+
+                        `<p>${artwork.city}</p>`+
+                        `<button class="more-info-btn"><a href="/artwork/details/${artwork._id}">Artwork details</a></button>`+
+                    `</div>`+
+                `</div>`;
+
             const center = {
                 lat: artwork.location.coordinates[1],
                 lng: artwork.location.coordinates[0]
@@ -37,13 +47,20 @@ window.onload = () => {
                 position: center,
                 map: map,
                 title: artwork.artist,
-                icon: `https://res.cloudinary.com/dconurgxl/image/upload/v1592162823/street-curator-profile-picture/artwork-locations_dijfcp.png`,
-                url: `https://www.nu.nl`
-
+                // label: artwork.artist,
+                icon: `https://res.cloudinary.com/dconurgxl/image/upload/v1592162823/street-curator-profile-picture/artwork-locations_dijfcp.png`
             });
-            markers.push(pin);
-        });
 
+            markers.push(pin);
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+              });
+
+            pin.addListener('click', function() {
+                infowindow.open(map, pin);
+              });
+        });
     }
 
     getArtworks();
