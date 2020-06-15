@@ -104,6 +104,7 @@ app.use('/', require('./routes/user/login'));
 app.use('/', require('./routes/explore'));
 app.use('/', require('./routes/map'))
 app.use('/', require('./routes/artwork/details'));
+app.use('/', require('./routes/artwork/delete'));
 app.use('/', require('./routes/artwork/add'));
 app.use('/', require('./routes/artwork/like'));
 app.use('/', require('./routes/artwork/review'));

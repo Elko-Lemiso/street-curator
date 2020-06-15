@@ -3,19 +3,19 @@
 const navigationOptions = [
   {
     name: 'explore',
-    color: '#5B37B7'
+    color: '#dcd2e6'
   },
   {
     name: 'map',
-    color: '#C9379D'
+    color: '#DA959E'
   },
   {
     name: 'list',
-    color: '#E6A919'
+    color: '#dcd2e6'
   },
   {
     name: 'profile',
-    color: '#1892A6'
+    color: '#DA959E'
   }
 ];
 

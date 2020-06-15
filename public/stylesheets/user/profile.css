@@ -1,3 +1,6 @@
+body{
+    background-color: #DA959E;
+}
 .profile{
     display: flex;
     flex-direction: column;
