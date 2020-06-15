@@ -44,7 +44,7 @@ router.post('/upload', uploadCloud.single('picture'), (req, res, next) =>{
             console.log('This is the invalid field ->', error.field)
         })
         .then(()=>{
-            res.redirect('/explore');
+            res.redirect('/profile');
         })
         .catch(error =>{
             console.log('Error occured with redirecting', error);
