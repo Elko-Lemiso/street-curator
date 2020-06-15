@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
   artwork : {type: Schema.ObjectId , ref: 'Artwork' },
-  creator :  {type: Schema.ObjectId , ref: 'User' },
+  creator :  {type: String},
   review : {type: String},
 });
 

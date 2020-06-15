@@ -1,15 +1,12 @@
 const express = require('express');
 const router  = express.Router();
 const Artwork = require('../../models/Artwork');
+const text = require('body-parser/lib/types/text');
 
 
-
-router.get("/artwork/details/:artworkId", (req,res)=>{
-    Artwork
-      .findById(req.params.artworkId)
-      .populate('reviews')
-      .then(artwork =>{
-        console.log(artwork);  
+router.get("/like/:artworkId", (req,res)=>{
+    Artwork.findOneAndUpdate({_id : req.params.artworkId}, {$inc : {'likes' : 1}})
+      .then(artwork =>{ 
         res.render('details', {artwork})
       })
       .catch(error => {
