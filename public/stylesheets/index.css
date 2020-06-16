@@ -176,17 +176,50 @@ body{
               
     }
 }
-
-@media (max-width: 700px) {
+@media(max-width: 1000px) and (min-width:700px) {
     .landing-page .title{
         font-size: 1.7rem;
         position: absolute;
-        top: 40px;
+        top: 30%;
         width: 90%;
+    }
+    .landing-page .artist-text, .landing-page .tourist-text{
+        font-size: 1rem;
+        text-shadow: none;
+    }
+    .landing-page .content-positioning h2{
+        font-size: 3rem;
+    }
+}
+@media (max-width: 700px) and (min-width:600px) {
+    .landing-page .title{
+        font-size: 1.7rem;
+        position: absolute;
+        top: 22%;
+        width: 90%;
+    }
+    .landing-page .artist-text, .landing-page .tourist-text{
+        font-size: 0.9rem;
+        text-shadow: none;
+    }
+    .content-positioning{
+        padding: 0;
+    }
+    .landing-page .content-positioning h2{
+        font-size: 2.5rem;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px){
+    .landing-page .title{
+        font-size: 1.7rem;
+        position: absolute;
+        top: 22%;
+        width: 90%;
+    }
+    .landing-page .content-positioning h2{
+        font-size: 2rem;
+    }
     .landing-page{
         flex-direction: column;
         width: 100%;
@@ -214,7 +247,7 @@ body{
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 500px) and (min-width:400px) {
     .landing-page .title{
         font-size: 1.2rem;
         position: absolute;
@@ -223,6 +256,11 @@ body{
     }
     .landing-page .content-positioning h2{
         font-size:2rem;
+    }
+    .landing-page{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
     
     .landing-page .artist-text, .landing-page .tourist-text{
@@ -253,6 +291,11 @@ body{
         position: absolute;
         top: 45%;
         width: 95%;
+    }
+    .landing-page{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
     .landing-page .box{
         height: 60%;
