@@ -86,7 +86,7 @@ body{
 .profile .top-section .profile-actions #upload-btn{
     position: fixed;
     right: 30%;
-    bottom: 75px;
+    bottom: 150px;
     background-color: #A8C7BB;
 }    
 
@@ -166,7 +166,7 @@ body{
     .profile .top-section .profile-actions #upload-btn{
         position: fixed;
         right: 20px;
-        bottom: 75px;
+        bottom: 100px;
     }    
 }
 
