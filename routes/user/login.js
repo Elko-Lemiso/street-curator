@@ -17,7 +17,7 @@ router.post("/user/login", (req, res, next)=>{
   User.findOne({"email": email})
   .then(user =>{
       if (!user) {
-          res.render("login", {
+          res.render("user/login", {
             errorMessage: "The email doesn't exist."
           });
           return;
@@ -35,7 +35,7 @@ router.post("/user/login", (req, res, next)=>{
           console.log(res.session);
           res.redirect("/explore");
         }else{
-          res.render("login", {
+          res.render("user/login", {
           errorMessage: "Incorrect password"
           });
         }

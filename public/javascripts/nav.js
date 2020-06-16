@@ -2,19 +2,19 @@ window.addEventListener("load", addActive());
 const navigationOptions = [
   {
     name: 'explore',
-    color: '#dcd2e6'
+    color: '#b48484'
   },
   {
     name: 'map',
-    color: '#DA959E'
+    color: '#b48484'
   },
   {
     name: 'list',
-    color: '#dcd2e6'
+    color: '#b48484'
   },
   {
     name: 'profile',
-    color: '#DA959E'
+    color: '#b48484'
   }
 ];
 
@@ -37,7 +37,6 @@ function handleClick(e) {
     this.style.setProperty('--hover-c', color);
   }
   this.classList.add('active');
-  document.querySelector('body').style.background = color;
 }
  
 function addActive() {

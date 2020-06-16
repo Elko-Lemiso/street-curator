@@ -1,11 +1,5 @@
 body{
-    background-color: #DA959E;
-}
-.artwork-map{
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center; */
+    background-color: #ffffff;
 }
 
 #map {
