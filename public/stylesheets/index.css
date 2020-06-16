@@ -300,6 +300,13 @@ body{
     .landing-page .box{
         height: 60%;
     }
+
+    .landing-page .artist-text, .landing-page .tourist-text{
+        font-size: 0.9rem;
+        width: 50vw;
+        text-shadow: none;
+
+    }
 }
 
 .text-animate{
