@@ -1,11 +1,13 @@
 <link rel="stylesheet" href="/stylesheets/explore.css">
 {{>nav}}
 <div id="explore">
-    <div class="image-div"><img src="/images/street-curator-logo.png" alt=""></div>
+    <div class="image-div">
+        <img src="/images/street-curator-logo.png" alt="">
+    </div>
     <h1>WHERE ARE WE GOING?</h1>
     <form action="/upload" method="post">
         <select name="locations" id="location">
-            <option value="" hidden>Select a location</option>
+            <option value="" hidden>Select a city</option>
             <option value="/map/rotterdam">Rotterdam</option>
             <option value="/map/amsterdam">Amsterdam</option>
         </select>

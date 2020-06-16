@@ -37,7 +37,7 @@ body{
     justify-content: center;
     width: 100%;
     height: 100vh;
-    margin-bottom: 8vh;
+    margin-bottom: 0px;
 }
 
 .landing-page a{
@@ -183,6 +183,7 @@ body{
     .landing-page{
         flex-direction: column;
         width: 100%;
+        margin-bottom: 8vh;
     }
 
     .landing-page p{

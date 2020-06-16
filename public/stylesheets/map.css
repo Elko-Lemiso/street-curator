@@ -19,10 +19,15 @@ body{
     text-transform: capitalize;
 }
 
-#map .more-info-img{
-    width: 100px;
-    height: auto;
+#map .image-div-detail{
+    width: 50%;
+    height: 100px;
     margin-right: 10px;
+}
+
+#map .more-info-img{
+    width: 100%;
+    height: auto;
 }
 
 #map #bodyContent{
@@ -43,6 +48,6 @@ body{
 
 @media only screen and (max-width: 400px) {
     #map {
-        height: 600px;
+        height: 500px;
     }
 }

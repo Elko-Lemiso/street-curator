@@ -10,6 +10,7 @@ body{
     justify-content: center;
     text-align: center;
 }
+
 #explore .image-div{
     width: 15%;
     display: flex;
@@ -17,15 +18,20 @@ body{
     align-content: center;
     align-self: center;
 }
+
 #explore .image-div img{
     width: 100%;
+    height: auto;
 }
+
 #explore form{
     width: 50%;
     align-self: center;
     margin: 2%;
     border-radius: 10% ;
+    overflow: hidden;
 }
+
 #explore form select{
     height: 3rem;
     text-align: center;

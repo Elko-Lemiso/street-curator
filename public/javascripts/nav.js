@@ -49,14 +49,19 @@ function handleClick(e) {
  
 function addActive() {
   var url = document.URL.split("/"); //replace string with location.href
-  var i=0;
   const links = document.querySelectorAll('nav a span');
   const anchors = document.querySelectorAll('nav a');
-  var currentPage = url[url.length - 1];
-  for(i;i<links.length;i++){
-    if(links[i].innerHTML.toLowerCase() === currentPage) {
-    anchors[i].setAttribute("class" , "active");
-    }
+
+  var currentPage = url[url.length - 1]
+
+  for(var i = 0; i<links.length ; i++){
+      if(links[i].innerHTML.toLowerCase().replace(/\s/g,'') === currentPage) {
+        console.log(links[i].innerHTML.toLowerCase().trim());
+        console.log(currentPage);
+
+        anchors[i].setAttribute("class" , "active");
+
+      }
     }
 }
 
