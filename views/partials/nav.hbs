@@ -1,7 +1,4 @@
-<!-- markup structure
-nav, a wrapping container for a series of link elements
-  a, each anchor link element nesting an SVG icon and a span describing the link
--->
+{{#if loggedIn}}
 <nav>
   <div>
     <a href="/explore">
@@ -21,5 +18,21 @@ nav, a wrapping container for a series of link elements
     </a>
   </div>
 </nav>
+{{else}}
+<nav class="login-nav">
+  <div class="left">
+    <a href="/"><img src="/images/street-curator-logo.png" alt="street-curator-logo"><h1><span>Street Curator</span></h1></a>
+  </div>
+  <div class="log-sign">
+    <a href="/login">
+    <span>Login</span>
+    </a>
+
+    <a href="/signup">
+      <span>Sign up</span>
+    </a>
+  </div>
+</nav>
+{{/if}}
 <script src="/javascripts/nav.js"></script>
 
