@@ -31,6 +31,7 @@ nav div {
 }
 .login-nav{
   justify-content: space-between;
+  padding: 0;
 }
 .right{
   justify-self: flex-end;
@@ -45,8 +46,16 @@ nav div {
 
 .left img{
   justify-self: flex-start;
+  align-self: center;
   width: 6vw;
   margin-left:1rem ;
+}
+.left h1{
+  font-style: bold;
+  font-size: 1rem;
+  color: grey;
+  margin-left: 2rem;
+  align-self: center;
 }
 
 /* remove default style and slightly separate the anchor links from one another */
