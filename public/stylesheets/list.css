@@ -1,10 +1,11 @@
 body{
-    background-color: #dcd2e6;
+    background-color: #ffffff;
 }
 .wrapper{
     width: 100%;
     display: flex;
     justify-content: center;
+    
 }
 .row{
     display: flex;
@@ -25,10 +26,10 @@ body{
     z-index: 0;
 }
 .box img{
-    padding: 0rem;
+    padding: 0;
     max-width:10vw;
     min-width:10vw;
-   align-self: center;
+    align-self: center;
 }
  .box:hover {
     cursor: pointer;
@@ -49,18 +50,24 @@ body{
   }
 
   @media(max-width: 600px){
+    .wrapper{
+        margin-bottom: 17vh;
+    }
+    a{
+        padding: 2rem 0 0 0;
+    }
     .box{
-        max-width:30%;
-        min-width:30%;
-        margin-top: 3rem;
-        margin-left: 3rem ;
+        left: 0;
+        margin: 0;
+        max-width:30vw;
+        min-width:30vw;
         display: inline-block;
         z-index: 0;
     }
     .box img{
         padding: 0rem;
-        max-width:inherit;
-        min-width:inherit;
+        max-width:25vw;
+        min-width:25vw;
        align-self: center;
     }
   }
