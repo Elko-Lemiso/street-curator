@@ -6,12 +6,18 @@
     margin-bottom: 20px;
 }
 
-.edit-profile .profile-picture img{
-    width: 100px;
+.edit-profile .profile-picture{
+    width: 150px;
     height: auto;
-    border: grey;
-    border-width: 1px;
-    border-radius: 3px;
+    border: 1px rgb(194, 194, 194) solid;
+    border-radius: 5px;
+}
+
+.edit-profile .profile-picture img{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .edit-profile .delete-btn{
