@@ -37,7 +37,7 @@ body{
     justify-content: center;
     width: 100%;
     height: 100vh;
-    margin-bottom: 0px;
+    margin-bottom: 8vh;
 }
 
 .landing-page a{
@@ -83,6 +83,11 @@ body{
     background-position: center;
     filter: grayscale(100%);
 }
+.layer{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
 
 .landing-page .content-positioning{
     height: 70%;
@@ -93,7 +98,6 @@ body{
 }
 .landing-page .content-positioning h2{
     font-size: 3.5rem;
-    
 }
 
 .landing-page .layer{
@@ -152,7 +156,8 @@ body{
     100% {
       -webkit-transform: rotateY(-180deg);
               transform: rotateY(-180deg);
-              filter: grayscale(100%);
+              background: url(none);
+              background-color: #e37777;
               
     }
 }
@@ -165,7 +170,8 @@ body{
         
       -webkit-transform: rotateY(-180deg);
               transform: rotateY(-180deg);
-              filter: grayscale(100%);
+              background: url(none);
+              background-color: #e37777;
               
     }
 }
@@ -183,7 +189,6 @@ body{
     .landing-page{
         flex-direction: column;
         width: 100%;
-        margin-bottom: 8vh;
     }
 
     .landing-page p{
@@ -215,9 +220,28 @@ body{
         width: 90%;
         top: 45%;
     }
+    .landing-page .content-positioning h2{
+        font-size:2rem;
+    }
+    
+    .landing-page .artist-text, .landing-page .tourist-text{
+        font-size: 0.8rem;
+        width: 50vw;
+        text-shadow: none;
 
+    }
+    .layer{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .content-positioning{
+        padding: 0%;
+        align-self: center;
+    }
     .landing-page .box{
         height: 60%;
+        text-align: center;
     }
 }
 
@@ -228,7 +252,6 @@ body{
         top: 45%;
         width: 95%;
     }
-
     .landing-page .box{
         height: 60%;
     }
