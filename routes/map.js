@@ -44,5 +44,11 @@ router.get('/map/api/:id', (req, res, next) => {
         })
 });
 
+router.get('/map/:id', (req, res, next) => {
+    let cityName = req.params.id;
+    
+    res.render('map', {cityName});
+});
+
 
 module.exports = router;

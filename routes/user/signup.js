@@ -32,6 +32,22 @@ router.post('/signup', uploadCloud.single('profilePicture'), (req, res, next) =>
         }
     }
 
+
+    // to check if all fields are filled
+    if (!newUser.username || !newUser.email || !newUser.password) {
+        res.render('user/signup', { errorMessage: 'Please fill in the required fields.' });
+        return;
+    }
+    
+    // make sure passwords are strong:
+    const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+    if (!regex.test(newUser.password)) {
+    res
+        .status(400)
+        .render('user/signup', { errorMessage: 'Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter.' });
+    return;
+    }
+
     User
         .create(newUser)
         .then((user)=>{
