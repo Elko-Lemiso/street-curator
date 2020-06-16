@@ -54,18 +54,6 @@ function addActive() {
 
   var currentPage = url[url.length - 1]
 
-  // console.log(url);
-  // console.log(links);
-  // console.log(anchors);
-  // console.log(currentPage);
-
-  // if(url.length !== 1){
-  //   currentPage = url[url.length - 1]
-  // } else {
-  //   currentPage = url[url.length]
-  // }
-  
-
   for(var i = 0; i<links.length ; i++){
       if(links[i].innerHTML.toLowerCase().replace(/\s/g,'') === currentPage) {
         console.log(links[i].innerHTML.toLowerCase().trim());
