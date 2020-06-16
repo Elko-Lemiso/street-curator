@@ -5,13 +5,12 @@ body{
 
 .landing-page .title{
     position: absolute;
-    visibility: hidden;
-    top: 7.5%;
+    visibility: visible;
+    top: 25%;
     width: 70%;
     text-align: center;
     font-weight: 800;
-    color: rgba(0, 0, 0, 0.6);
-    text-shadow: 2px 3px 2px rgba(255, 255, 255, 1);
+    color: #e37777;
 }
 
 #login-here{
@@ -25,11 +24,12 @@ body{
 .landing-page .sub-title{
     color: white;
     font-weight: 800;
-    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.678);
+    text-shadow: black 2px 2px;
 }
 
 .landing-page span{
     color: white;
+    text-shadow: black 2px 2px;  
 }
 
 .landing-page{
@@ -56,32 +56,32 @@ body{
 }
 
 .landing-page .left-section{
-    background-color: rgb(225, 235, 231);
+    background-color: rgb(255, 255, 255);
 }
 
 .landing-page .right-section{
-    background-color: rgb(255, 240, 253);
+    background-color: rgb(255, 255, 255);
 }
 
 .landing-page .box{
-    box-shadow: 10px 10px 18px 0px rgba(0,0,0,0.75);
     width: 70%;
     height: 40%;
     display: flex;
     flex-direction: column;
-    color: black;
-    text-shadow: 1px 2px 2px rgba(255, 255, 255, 1);
+    color: white;
     cursor: pointer;
 }
   
 .landing-page .right-box{
     background: url("https://res.cloudinary.com/dconurgxl/image/upload/v1592227177/street-curator-profile-picture/graffiti-artist_r43why.jpg");
     background-position: center;
+    filter: grayscale(100%);
 }
  
 .landing-page .left-box{
     background: url('https://res.cloudinary.com/dconurgxl/image/upload/v1592227178/street-curator-profile-picture/street-curator_xfiybn.jpg');
     background-position: center;
+    filter: grayscale(100%);
 }
 
 .landing-page .content-positioning{
@@ -90,6 +90,10 @@ body{
     padding: 40px;
     display: flex;
     flex-direction: column;
+}
+.landing-page .content-positioning h2{
+    font-size: 3.5rem;
+    
 }
 
 .landing-page .layer{
@@ -105,53 +109,36 @@ body{
     background-color: transparent;
 }
 
-.landing-page .right-box .layer:hover{
-    background-color: rgba(225, 235, 231, 0.8);
+.landing-page .right-box:hover{
+    filter: grayscale(0);
+    
 }
 
-.landing-page .left-box .layer:hover{
-    background-color: rgba(255, 240, 253, 0.8);
+.landing-page .left-box:hover{
+    filter: grayscale(0);
 }
-
+.tourist-here{
+    text-shadow: black 2px 2px; 
+}
+.artist-here{
+    text-shadow: black 2px 2px; 
+}
 
 .landing-page .artist-text, .landing-page .tourist-text{
     transform: rotateY(-180deg);
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 1.3rem;
+    text-shadow: black 2px 2px;          
+    color: white;
 }
-
-.landing-page .cta-button{
-    background: white;
-    color: black;
-    padding: 10px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transform: rotateY(-180deg);
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    z-index: 5;
+.landing-page .content-positioning{
+    text-align: center;
 }
 
 .hide{
     display: none;
 }
-
-.landing-page .right-box .cta-button{
-    border: solid 6px rgb(204, 219, 213);
-}
-.landing-page .right-box .cta-button:hover{
-    border: solid 6px rgb(235, 210, 231);
-}
-
-.landing-page .left-box .cta-button{
-    border: solid 6px  rgb(235, 210, 231);
-}
-
-.landing-page .left-box .cta-button:hover{
-    border: solid 6px rgb(204, 219, 213);
-}
-
 .flip-vertical-left {
 	-webkit-animation: flip-vertical-left 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 	        animation: flip-vertical-left 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
@@ -165,6 +152,8 @@ body{
     100% {
       -webkit-transform: rotateY(-180deg);
               transform: rotateY(-180deg);
+              filter: grayscale(100%);
+              
     }
 }
 @keyframes flip-vertical-left {
@@ -173,8 +162,11 @@ body{
               transform: rotateY(0);
     }
     100% {
+        
       -webkit-transform: rotateY(-180deg);
               transform: rotateY(-180deg);
+              filter: grayscale(100%);
+              
     }
 }
 
@@ -208,12 +200,11 @@ body{
         width: 80%;
         text-align: center;
         font-weight: 800;
-        color: rgba(0, 0, 0, 0.6);
-        text-shadow: 2px 3px 2px rgba(255, 255, 255, 1);
     }
 
     .landing-page .content-positioning{
         padding: 20px;
+        text-align: center;
     }
 }
 

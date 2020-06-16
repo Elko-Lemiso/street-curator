@@ -140,10 +140,7 @@ a.active span {
     font-size: 1rem;
     font-style: normal;
   }
-  /* remove the negative margin from the svg elements, as the width is to be taken in full */
-  nav svg {
-    margin: 0;
-  }
+  
 
   a.active span{
     background-color: lightgray;
