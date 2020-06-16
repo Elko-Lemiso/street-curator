@@ -30,7 +30,9 @@ window.onload = () => {
     function placeArtworks(artwork){
         var contentString = 
             `<div id="content">`+
-                `<img class="more-info-img" src='${artwork.picture.path}' alt="${artwork.artist}">`+
+                `<div class="image-div-detail">`+
+                    `<img class="more-info-img" src='${artwork.picture.path}' alt="${artwork.artist}">`+
+                `</div>`+
                 `<div id="bodyContent">`+
                     `<h2 class="more-info-header" class="firstHeading">${artwork.artist}</h2>`+
                     `<p>${artwork.city}</p>`+
