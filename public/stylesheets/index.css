@@ -176,7 +176,7 @@ body{
               
     }
 }
-@media(max-width: 1000px) and (min-width:700px) {
+@media(max-width: 1000px){
     .landing-page .title{
         font-size: 1.7rem;
         position: absolute;
@@ -191,7 +191,7 @@ body{
         font-size: 3rem;
     }
 }
-@media (max-width: 700px) and (min-width:600px) {
+@media (max-width: 700px){
     .landing-page .title{
         font-size: 1.7rem;
         position: absolute;
@@ -247,7 +247,7 @@ body{
     }
 }
 
-@media (max-width: 500px) and (min-width:400px) {
+@media (max-width: 500px){
     .landing-page .title{
         font-size: 1.2rem;
         position: absolute;
@@ -255,8 +255,9 @@ body{
         top: 45%;
     }
     .landing-page .content-positioning h2{
-        font-size:2rem;
+        font-size: 2rem;
     }
+
     .landing-page{
         display: flex;
         flex-direction: column;
@@ -312,6 +313,7 @@ body{
 .text-animate{
 	animation: tracking-in-contract-bck-top 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
+
 @keyframes tracking-in-contract-bck-top {
     0% {
       letter-spacing: 1em;
