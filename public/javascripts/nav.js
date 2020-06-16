@@ -15,6 +15,14 @@ const navigationOptions = [
   {
     name: 'profile',
     color: '#b48484'
+  },
+  {
+    name: 'login',
+    color: '#b48484'
+  },
+  {
+    name: 'sign up',
+    color: '#b48484'
   }
 ];
 
