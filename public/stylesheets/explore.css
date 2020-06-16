@@ -13,6 +13,7 @@ body{
 
 #explore .image-div{
     width: 15%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -21,7 +22,7 @@ body{
 
 #explore .image-div img{
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 #explore form{
