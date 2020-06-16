@@ -1,4 +1,33 @@
 window.onload = () => {
+    const geocoder = new google.maps.Geocoder();
+  
+    // Try to get a geolocation object from the web browser
+    if (navigator.geolocation) {
+     
+        // Get current position, the permissions dialog will pop up
+        navigator.geolocation.getCurrentPosition(function (position) {
+            // Create an object to match Google's Lat-Lng object format
+            const center = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            const pin = new google.maps.Marker({
+                position: center,
+                map: map,
+                title: `This is you!`,
+                icon: `https://res.cloudinary.com/dconurgxl/image/upload/v1592162823/street-curator-profile-picture/your-location_ywxak5.png`
+            });
+            markers.push(pin);
+
+            // User granted permission, center the map in the position we got
+        }, function () {
+            console.log('Error in the geolocation service.');
+        });
+    } else {
+      console.log('Browser does not support geolocation.');
+    }
+
     const rotterdam = {
       lat: 51.9294641, 
       lng: 4.4718353
@@ -65,33 +94,6 @@ window.onload = () => {
 
     getArtworks();
 
-    const geocoder = new google.maps.Geocoder();
-  
-    // Try to get a geolocation object from the web browser
-    if (navigator.geolocation) {
-     
-        // Get current position, the permissions dialog will pop up
-        navigator.geolocation.getCurrentPosition(function (position) {
-            // Create an object to match Google's Lat-Lng object format
-            const center = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
-
-            const pin = new google.maps.Marker({
-                position: center,
-                map: map,
-                title: `This is you!`,
-                icon: `https://res.cloudinary.com/dconurgxl/image/upload/v1592162823/street-curator-profile-picture/your-location_ywxak5.png`
-            });
-            markers.push(pin);
-
-            // User granted permission, center the map in the position we got
-        }, function () {
-            console.log('Error in the geolocation service.');
-        });
-    } else {
-      console.log('Browser does not support geolocation.');
-    }
+   
 };
 

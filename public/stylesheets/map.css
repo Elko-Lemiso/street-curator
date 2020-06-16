@@ -5,7 +5,7 @@ body{
 #map {
     margin-top: 20px;
     width: 90%;
-    height: 475px;
+    height: 450px;
     border-radius: 20px;
 }
 
@@ -19,15 +19,10 @@ body{
     text-transform: capitalize;
 }
 
-#map .image-div-detail{
-    width: 50%;
-    height: 100px;
-    margin-right: 10px;
-}
-
 #map .more-info-img{
-    width: 100%;
+    width: 100px;
     height: auto;
+    margin-right: 10px;
 }
 
 #map #bodyContent{
@@ -40,14 +35,4 @@ body{
 #map .more-info-btn{
     padding: 0px;
     background-color: #A8C7BB;
-}
-
-#map .more-info-btn a{
-    padding: 5px;
-}
-
-@media only screen and (max-width: 400px) {
-    #map {
-        height: 500px;
-    }
 }
