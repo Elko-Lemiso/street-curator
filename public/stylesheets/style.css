@@ -69,7 +69,7 @@ form input {
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 30px;
     box-sizing: border-box;
 }
 form button {
@@ -80,7 +80,7 @@ form button {
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 3px;
+    border-radius: 30px;
     cursor: pointer;
 }
 
