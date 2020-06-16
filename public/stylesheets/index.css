@@ -11,6 +11,7 @@ body{
     text-align: center;
     font-weight: 800;
     color: #e37777;
+    align-self: center;
 }
 
 #login-here{
@@ -225,7 +226,7 @@ body{
     }
     
     .landing-page .artist-text, .landing-page .tourist-text{
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         width: 50vw;
         text-shadow: none;
 
@@ -243,6 +244,7 @@ body{
         height: 60%;
         text-align: center;
     }
+
 }
 
 @media (max-width: 360px) {
