@@ -1,20 +1,21 @@
 window.onload = () => {
-    const rotterdam = {
+    const theLocation = {
       lat: 51.9294641, 
       lng: 4.4718353
     };
+
+    let center = {
+        lat: undefined,
+        lng: undefined
+      }; 
     
     const markers = []
     
     const map = new google.maps.Map(document.getElementById('map'), {
       zoom: 13,
-      center: rotterdam
+      center: theLocation
     });
    
-    let center = {
-      lat: undefined,
-      lng: undefined
-    }; 
 
     function getArtworks() {
         axios.get("/map/api")
@@ -65,8 +66,8 @@ window.onload = () => {
 
     getArtworks();
 
-    const geocoder = new google.maps.Geocoder();
-  
+    var geocoder = new google.maps.Geocoder();
+
     // Try to get a geolocation object from the web browser
     if (navigator.geolocation) {
      
@@ -93,5 +94,26 @@ window.onload = () => {
     } else {
       console.log('Browser does not support geolocation.');
     }
+
+
+    const $selectedLocation = document.getElementById('cityName').innerHTML;
+    
+    if ($selectedLocation !== ""){
+        geocodeAddress(geocoder, map)
+    }
+
+    function geocodeAddress(geocoder, resultsMap) {
+
+        var address = $selectedLocation;
+        
+        geocoder.geocode({'address': address}, function(results, status) {
+            if (status === 'OK') {
+                resultsMap.setCenter(results[0].geometry.location);
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+
 };
 

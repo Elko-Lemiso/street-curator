@@ -5,7 +5,7 @@ body{
 #map {
     margin-top: 20px;
     width: 90%;
-    height: 450px;
+    height: 475px;
     border-radius: 20px;
 }
 
@@ -35,4 +35,14 @@ body{
 #map .more-info-btn{
     padding: 0px;
     background-color: #A8C7BB;
+}
+
+#map .more-info-btn a{
+    padding: 5px;
+}
+
+@media only screen and (max-width: 400px) {
+    #map {
+        height: 600px;
+    }
 }
